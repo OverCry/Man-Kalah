@@ -1,0 +1,13 @@
+{
+  "tests": [
+   {
+      "name": "testrun",
+      "setup": "",
+      "run": "make tests",
+      "input": "",
+      "output": "",
+      "timeout": 10,
+      "points": 10
+    }
+   ]
+}
