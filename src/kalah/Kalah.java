@@ -4,9 +4,7 @@ import com.qualitascorpus.testsupport.IO;
 import com.qualitascorpus.testsupport.MockIO;
 
 /**
- * This class is the starting point for a Kalah implementation using
- * the test infrastructure. Remove this comment (or rather, replace it
- * with something more appropriate)
+ * Main class for (Man)Kalah
  */
 public class Kalah {
 	public static void main(String[] args) {
