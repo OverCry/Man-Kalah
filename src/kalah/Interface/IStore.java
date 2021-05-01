@@ -1,10 +1,12 @@
 package kalah.Interface;
 
 public interface IStore {
+    public int getNumber();
+
     public int getAmount();
 
-//    public String getSAmount();
+    public void add(int amount);
 
-    public void addOne();
+    public int getAll();
 
 }
