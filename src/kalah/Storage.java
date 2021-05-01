@@ -3,7 +3,7 @@ package kalah;
 import kalah.Interface.IStorage;
 
 public class Storage implements IStorage {
-    int _amount = 0;
+    int _amount = 4;
 
     @Override
     public int getAmount() {
@@ -13,6 +13,5 @@ public class Storage implements IStorage {
     @Override
     public void addOne() {
         _amount++;
-
     }
 }
