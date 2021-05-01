@@ -4,5 +4,5 @@ public interface IHouse{
     public int getAmount();
 
 
-    public void addOne();
+    public void addAmount(int amount);
 }

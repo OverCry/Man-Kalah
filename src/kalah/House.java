@@ -9,8 +9,8 @@ public class House implements IHouse {
         return _amount;
     }
 
-    public void addOne() {
-        _amount++;
+    public void addAmount(int amount) {
+        _amount+= amount;
     }
 
 }

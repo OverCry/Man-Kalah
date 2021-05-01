@@ -17,6 +17,7 @@ public class Board implements IBoard {
     private IHouse _p1house = new House();
     private IHouse _p2house = new House();
     private boolean _stop = false;
+    private Boolean _win = null;
 
     public Board(IO io) {
         setUp();
@@ -46,25 +47,46 @@ public class Board implements IBoard {
         boolean midpoint = true;
         while (seeds > 0) {
 
-            if (midpoint){
-                for (IStore store: (turn ? _p1Stores:_p1Stores)){
-                    if (store.getNumber()>storeNum){
+            if (midpoint) {
+                for (IStore store : (turn ? _p1Stores : _p1Stores)) {
+                    if (store.getNumber() > storeNum) {
                         store.add(1);
                         seeds--;
                         // if it ends on a store, swap player
-                        if (seeds==0){
-                            _turn=!_turn;
+                        if (seeds == 0) {
+                            _turn = !_turn;
                             //TODO add logic for checking if last spot was empty
-                            break;
                         }
+                        break;
                     }
                 }
-                midpoint=false;
+                midpoint = false;
+
+                //TODO add to store
+            } else {
+                if (turn == _turn) {
+                    (_turn ? _p1house : _p2house).addAmount(1); //TODO FEELZ REALLY JANK
+                    seeds--;
+                    if (seeds == 0) {
+                        //no need to change players
+                        break; //TODO return?
+
+                    }
+                }
+                for (IStore store : (turn ? _p1Stores : _p1Stores)) {
+                    store.add(1);
+                    seeds--;
+                    // if it ends on a store, swap player
+                    if (seeds == 0) {
+                        _turn = !_turn;
+                        //TODO add logic for checking if last spot was empty
+                    }
+                }
             }
-
-
         }
+        turn = !turn;
     }
+
 
     private void setUp() {
         for (int i = 1; i <= 6; i++) {
