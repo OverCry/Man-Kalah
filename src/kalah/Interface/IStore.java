@@ -7,6 +7,6 @@ public interface IStore {
 
     public void add(int amount);
 
-    public int getAll();
+    public int takeAll();
 
 }

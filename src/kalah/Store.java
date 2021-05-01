@@ -26,7 +26,7 @@ public class Store implements IStore {
 
 
     @Override
-    public int getAll() {
+    public int takeAll() {
         int returning = getAmount();
         _amount=0;
         return returning;
