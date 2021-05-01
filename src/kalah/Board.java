@@ -3,12 +3,10 @@ package kalah;
 import com.qualitascorpus.testsupport.IO;
 import kalah.Interface.IBoard;
 import kalah.Interface.IHouse;
-import kalah.Interface.IStorage;
 import kalah.Interface.IStore;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Board implements IBoard {
     final private  boolean PLAYER_1 = true;
@@ -16,15 +14,17 @@ public class Board implements IBoard {
     private boolean turn = PLAYER_1;
     private List<IStore> _p1Stores = new ArrayList<>();
     private List<IStore> _p2Stores = new ArrayList<>();
-    private List<IHouse> _p1house = new ArrayList<>(); //player 1 is first, player 2 is second
-    private List<IHouse> _p2house = new ArrayList<>(); //player 1 is first, player 2 is second
+//    private List<IHouse> _p1house = new ArrayList<>(); //player 1 is first, player 2 is second
+//    private List<IHouse> _p2house = new ArrayList<>();
+    private IHouse _p1house = new House();
+    private IHouse _p2house = new House();
 
     public Board (IO io){
         setUp();
 
-        while (true){
+//        while (true){
             printState(io);
-        }
+//        }
     }
 
     private void setUp(){
@@ -32,16 +32,30 @@ public class Board implements IBoard {
             _p1Stores.add(new Store());
             _p2Stores.add(new Store());
         }
-        _p1house.add(new House());
-        _p2house.add(new House());
+//        _p1house.add(new House());
+//        _p2house.add(new House());
     }
 
     private void printState(IO io){
-        // Replace what's below with your implementation
+        int p1Amount = _p1house.getAmount();
+        int p2Amount = _p2house.getAmount();
+
         io.println("+----+-------+-------+-------+-------+-------+-------+----+");
-        io.println("| P2 | 6[ 4] | 5[ 4] | 4[ 4] | 3[ 4] | 2[ 4] | 1[ 4] |  0 |");
+
+        io.print("| P2 ");
+        for (int i=6; i>0;i--){
+            io.print("| "+ i+"[ "+ _p2Stores.get(i-1).getAmount()+"] ");
+        }
+        io.println("| "+ (p1Amount>9 ? p1Amount/10 : " ") + _p1house.getAmount()%10+" |");
+
         io.println("|    |-------+-------+-------+-------+-------+-------|    |");
-        io.println("|  0 | 1[ 4] | 2[ 4] | 3[ 4] | 4[ 4] | 5[ 4] | 6[ 4] | P1 |");
+
+        io.print("| "+ (p2Amount>9 ? p2Amount/10 : " ") + _p2house.getAmount()%10+" ");
+        for (int i=0; i<6;i++){
+            io.print("| "+ (i+1)+"[ "+ _p1Stores.get(i).getAmount()+"] ");
+        }
+        io.println("| P2 |");
+
         io.println("+----+-------+-------+-------+-------+-------+-------+----+");
         io.println("Player P"+(turn ? "1":"2")+"'s turn - Specify house number or 'q' to quit: ");
     }
