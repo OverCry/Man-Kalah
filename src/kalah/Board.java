@@ -6,6 +6,7 @@ import kalah.Interface.IHouse;
 import kalah.Interface.IStore;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Board implements IBoard {
@@ -25,15 +26,27 @@ public class Board implements IBoard {
         _printer = io;
     }
 
+    public Board(IO io,int stalls,int startSeeds) {
+        _stalls = stalls;
+        _startingSeeds = startSeeds;
+        setUp();
+        _printer = io;
+    }
+
     public void play(){
         printState();
         while (!ifOver()) {
             String command = _printer.readFromKeyboard("Player P" + (_turn ? "1" : "2") + "'s turn - Specify house number or 'q' to quit: ");
+            String regex ="[1-"+_stalls+"]" ;
             if (command.equals("q")) {
                 break;
-            } else if (command.matches("[1-"+_stalls+"]")) {
+            } else if (command.matches("[1-9]*")) {
                 int number = Integer.parseInt(command);
-                doAction(number);
+                if (number<=_stalls) {
+                    doAction(number);
+                }
+            } else {
+                _printer.println("PLEASE");
             }
             printState();
         }
@@ -142,28 +155,53 @@ public class Board implements IBoard {
      * Helper function to printing out the output
      */
     private void printState() {
-        int p1Amount = _p1house.getAmount();
-        int p2Amount = _p2house.getAmount();
 
-        _printer.println("+----+-------+-------+-------+-------+-------+-------+----+");
-
-        _printer.print("| P2 ");
-        for (int i = 6; i > 0; i--) {
-            int amount = _p2Stores.get(i - 1).getAmount();
-            _printer.print("| " + i + "["  + (amount<10 ? " "+ amount : amount) + "] ");
+        _printer.print("+----");
+        for (int i=0;i<_stalls;i++){
+            _printer.print("+-------");
         }
-        _printer.println("| " + (p1Amount <10 ? " "+p1Amount : p1Amount) + " |");
+        _printer.println("+----+");
 
-        _printer.println("|    |-------+-------+-------+-------+-------+-------|    |");
+        // p2 | stalls for p2 | score of p1
+        _printer.print("| P2 ");
+        Collections.reverse(_p2Stores);
+        for (IStore store : _p2Stores) {
+            _printer.print("|" + printNumber(store.getNumber()) + "["  + printNumber(store.getAmount()) + "] ");
+        }
+        Collections.reverse(_p2Stores);
+        _printer.println("| " + printNumber(_p1house.getAmount()) + " |");
 
-        _printer.print("| " + (p2Amount <10 ? " "+p2Amount : p2Amount) + " ");
-        for (int i = 0; i < 6; i++) {
-            int amount = _p1Stores.get(i).getAmount();
-            _printer.print("| " + (i + 1) + "[" +  (amount<10 ? " "+ amount : amount)  + "] ");
+        _printer.print("|    |");
+        for (int i=0;i<_stalls;i++){
+            _printer.print("-------|");
+        }
+        _printer.println("    |");
+
+        // score of p2 | stalls for p1 | p2
+        _printer.print("| " + printNumber(_p2house.getAmount()) + " ");
+        for (IStore store : _p1Stores){
+            _printer.print("|" + printNumber(store.getNumber()) + "[" +  printNumber(store.getAmount())  + "] ");
         }
         _printer.println("| P1 |");
 
-        _printer.println("+----+-------+-------+-------+-------+-------+-------+----+");
+        _printer.print("+----");
+        for (int i=0;i<_stalls;i++){
+            _printer.print("+-------");
+        }
+        _printer.println("+----+");
+    }
+
+    /**
+     * formats a number to the correct string format
+     * ONLY intended for double digits
+     * @param number
+     * @return
+     */
+    private String printNumber(int number){
+        if (number>9){
+            return Integer.toString(number);
+        }
+        return " "+number;
     }
 
     /**
