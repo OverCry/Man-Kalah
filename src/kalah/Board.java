@@ -16,33 +16,37 @@ public class Board implements IBoard {
     private List<IStore> _p2Stores = new ArrayList<>();
     private IHouse _p1house = new House();
     private IHouse _p2house = new House();
+    private IO _printer;
 
     public Board(IO io) {
         setUp();
-        printState(io);
+        _printer = io;
+    }
+
+    public void play(){
+        printState(_printer);
         while (!ifOver()) {
-            String command = io.readFromKeyboard("Player P" + (_turn ? "1" : "2") + "'s turn - Specify house number or 'q' to quit: ");
+            String command = _printer.readFromKeyboard("Player P" + (_turn ? "1" : "2") + "'s turn - Specify house number or 'q' to quit: ");
             if (command.equals("q")) {
                 break;
             } else if (command.matches("[1-6]")) {
-                int number = Integer.valueOf(command);
-                doAction(number, io);
+                int number = Integer.parseInt(command);
+                doAction(number, _printer);
             }
-            printState(io);
+            printState(_printer);
         }
 
-        io.println("Game over");
-        printState(io);
+        _printer.println("Game over");
+        printState(_printer);
         // check if the game naturally finished
         if (ifOver()){
-            printResult(io);
+            printResult(_printer);
         }
-
     }
 
     private void doAction(int storeNum, IO io) {
         // check if the 'position' has values
-        IStore oriStore = (_turn ? _p1Stores.get(storeNum - 1) : _p2Stores.get(storeNum - 1));
+        IStore oriStore = (_turn == PLAYER_1 ? _p1Stores.get(storeNum - 1) : _p2Stores.get(storeNum - 1));
         int seeds = oriStore.takeAll();
         if (seeds == 0){
             io.println("House is empty. Move again.");
@@ -100,7 +104,6 @@ public class Board implements IBoard {
                         }
                         _turn = !_turn;
                         break;
-                        //TODO add logic for checking if last spot was empty
                     }
                 }
             }
@@ -169,12 +172,14 @@ public class Board implements IBoard {
     private void printResult(IO io){
         int p1sum = _p1house.getAmount();
         int p2sum = _p2house.getAmount();
+
         for (IStore s: _p1Stores){
             p1sum+=s.getAmount();
         }
         for (IStore s: _p2Stores){
             p2sum+=s.getAmount();
         }
+
         io.println("\tplayer 1:"+p1sum);
         io.println("\tplayer 2:"+p2sum);
         if (p1sum!=p2sum){

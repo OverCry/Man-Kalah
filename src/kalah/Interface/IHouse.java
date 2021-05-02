@@ -3,13 +3,13 @@ package kalah.Interface;
 public interface IHouse{
     /**
      * get the amount of seeds already in the house
-     * @return
+     * @return the amount of seeds
      */
-    public int getAmount();
+    int getAmount();
 
     /**
      * add an amount to the player's house
-     * @param amount
+     * @param amount amount of seeds to be added
      */
-    public void addAmount(int amount);
+    void addAmount(int amount);
 }

@@ -24,12 +24,10 @@ public class Store implements IStore {
         _amount+=amount;
     }
 
-
     @Override
     public int takeAll() {
         int returning = getAmount();
         _amount=0;
         return returning;
     }
-
 }

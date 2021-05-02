@@ -2,6 +2,7 @@ package kalah;
 
 import com.qualitascorpus.testsupport.IO;
 import com.qualitascorpus.testsupport.MockIO;
+import kalah.Interface.IBoard;
 
 /**
  * Main class for (Man)Kalah
@@ -11,7 +12,7 @@ public class Kalah {
 		new Kalah().play(new MockIO());
 	}
 	public void play(IO io) {
-		Board game = new Board(io);
-
+		IBoard game = new Board(io);
+		game.play();
 	}
 }

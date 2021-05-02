@@ -3,27 +3,27 @@ package kalah.Interface;
 public interface IStore {
     /**
      * get the store number
-     * @return
+     * @return the store number
      */
-    public int getNumber();
+    int getNumber();
 
     /**
      * get the number of seeds in the store
-     * @return
+     * @return amount of seeds in the store
      */
-    public int getAmount();
+    int getAmount();
 
     /**
      * add this amount of seeds
      * almost definitely 1 seed
-     * @param amount
+     * @param amount of seeds added to this store
      */
-    public void addAmount(int amount);
+    void addAmount(int amount);
 
     /**
      * takes all the seeds from this store
-     * @return
+     * @return the amount of seeds original in the store
      */
-    public int takeAll();
+    int takeAll();
 
 }
