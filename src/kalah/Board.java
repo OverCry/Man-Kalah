@@ -16,13 +16,12 @@ public class Board implements IBoard {
     private List<IStore> _p2Stores = new ArrayList<>();
     private IHouse _p1house = new House();
     private IHouse _p2house = new House();
-    private boolean _stop = false; //TODO might not need
-    private Boolean _win = null;
 
     public Board(IO io) {
         setUp();
+        printState(io);
         while (!ifOver()) {
-            printState(io);
+//            printState(io);
             String command = io.readFromKeyboard("Player P" + (_turn ? "1" : "2") + "'s turn - Specify house number or 'q' to quit: ");
             if (command.equals("q")) {
                 break;
@@ -30,15 +29,27 @@ public class Board implements IBoard {
                 int number = Integer.valueOf(command);
                 doAction(number, io);
             }
-
-            if (_stop) {
-                break;
-            }
+            printState(io);
         }
         io.println("Game over");
         printState(io);
-        if (_win!=null){
-//            io.println("STOP");
+        if (ifOver()){
+            int p1sum = _p1house.getAmount();
+            int p2sum = _p2house.getAmount();
+            for (IStore s: _p1Stores){
+                p1sum+=s.getAmount();
+            }
+            for (IStore s: _p2Stores){
+                p2sum+=s.getAmount();
+            }
+            io.println("\tplayer 1:"+p1sum);
+            io.println("\tplayer 2:"+p2sum);
+            if (p1sum!=p2sum){
+                io.println("Player " + (p1sum>p2sum ? 1 : 2) + " wins!");
+            } else {
+
+                io.println("A tie!");
+            }
         }
 
     }
@@ -64,9 +75,12 @@ public class Board implements IBoard {
                         if (seeds == 0) {
                             if (store.getAmount()==1){
                                 int pos = store.getNumber()-1;
-                                int add = store.takeAll();
-                                // get all from opposite
-                                (_turn ? _p1house : _p2house).addAmount((turn ? _p2Stores : _p1Stores).get(5-pos).takeAll()+add);
+                                IStore opposite = (turn ? _p2Stores : _p1Stores).get(5-pos);
+                                if (opposite.getAmount()>0) {
+                                    int add = store.takeAll();
+                                    // get all from opposite
+                                    (_turn ? _p1house : _p2house).addAmount((turn ? _p2Stores : _p1Stores).get(5 - pos).takeAll() + add);
+                                }
                             }
                             _turn = !_turn;
                             break;
@@ -90,10 +104,13 @@ public class Board implements IBoard {
                     // if it ends on a store, swap player
                     if (seeds == 0) {
                         if (store.getAmount()==1 && turn == _turn){
-                            int pos =  store.getNumber()-1;
-                            int add = store.takeAll();
-                            // get all from opposite
-                            (_turn ? _p1house : _p2house).addAmount((turn ? _p2Stores : _p1Stores).get(5-pos).takeAll()+add);
+                            int pos = store.getNumber()-1;
+                            IStore opposite = (turn ? _p2Stores : _p1Stores).get(5-pos);
+                            if (opposite.getAmount()>0) {
+                                int add = store.takeAll();
+                                // get all from opposite
+                                (_turn ? _p1house : _p2house).addAmount((turn ? _p2Stores : _p1Stores).get(5 - pos).takeAll() + add);
+                            }
                         }
                         _turn = !_turn;
                         break;
@@ -106,27 +123,34 @@ public class Board implements IBoard {
         }
     }
 
+    /**
+     * Check if the game does not have a valid move
+     * @return true if game is over
+     */
     private boolean ifOver(){
         //check if the stores are empty
         for (IStore store : (_turn? _p1Stores : _p2Stores)){
-            if (store.getNumber()!=0){
+            if (store.getAmount()!=0){
                 return false;
             }
         }
-        // set winner
-        _win = _turn;
         return true;
     }
 
+    /**
+     * Set up stores
+     */
     private void setUp() {
         for (int i = 1; i <= 6; i++) {
             _p1Stores.add(new Store(i));
             _p2Stores.add(new Store(i));
         }
-//        _p1house.add(new House());
-//        _p2house.add(new House());
     }
 
+    /**
+     * Helper function to printing out the output
+     * @param io
+     */
     private void printState(IO io) {
         int p1Amount = _p1house.getAmount();
         int p2Amount = _p2house.getAmount();
@@ -138,11 +162,13 @@ public class Board implements IBoard {
             int amount = _p2Stores.get(i - 1).getAmount();
             io.print("| " + i + "["  + (amount<10 ? " "+ amount : amount) + "] ");
         }
-        io.println("| " + (p1Amount > 9 ? p1Amount / 10 : " ") + _p1house.getAmount() % 10 + " |");
+//        io.println("| " + (p1Amount > 9 ? p1Amount / 10 : " ") + _p1house.getAmount() % 10 + " |");
+        io.println("| " + (p1Amount <10 ? " "+p1Amount : p1Amount) + " |");
+
 
         io.println("|    |-------+-------+-------+-------+-------+-------|    |");
 
-        io.print("| " + (p2Amount > 9 ? p2Amount / 10 : " ") + _p2house.getAmount() % 10 + " ");
+        io.print("| " + (p2Amount <10 ? " "+p2Amount : p2Amount) + " ");
         for (int i = 0; i < 6; i++) {
             int amount = _p1Stores.get(i).getAmount();
             io.print("| " + (i + 1) + "[" +  (amount<10 ? " "+ amount : amount)  + "] ");
