@@ -17,6 +17,8 @@ public class Board implements IBoard {
     private IHouse _p1house = new House();
     private IHouse _p2house = new House();
     private IO _printer;
+    private int _stalls = 6;
+    private int _startingSeeds = 4;
 
     public Board(IO io) {
         setUp();
@@ -29,7 +31,7 @@ public class Board implements IBoard {
             String command = _printer.readFromKeyboard("Player P" + (_turn ? "1" : "2") + "'s turn - Specify house number or 'q' to quit: ");
             if (command.equals("q")) {
                 break;
-            } else if (command.matches("[1-6]")) {
+            } else if (command.matches("[1-"+_stalls+"]")) {
                 int number = Integer.parseInt(command);
                 doAction(number);
             }
@@ -85,7 +87,7 @@ public class Board implements IBoard {
                     seeds--;
                     if (seeds == 0) {
                         //no need to change players
-                        break; //TODO return?
+                        return;
                     }
                 }
                 for (IStore store : (turn ? _p1Stores : _p2Stores)) {
@@ -130,9 +132,9 @@ public class Board implements IBoard {
      * Set up stores
      */
     private void setUp() {
-        for (int i = 1; i <= 6; i++) {
-            _p1Stores.add(new Store(i));
-            _p2Stores.add(new Store(i));
+        for (int i = 1; i <= _stalls; i++) {
+            _p1Stores.add(new Store(i,_startingSeeds));
+            _p2Stores.add(new Store(i,_startingSeeds));
         }
     }
 
