@@ -24,32 +24,32 @@ public class Board implements IBoard {
     }
 
     public void play(){
-        printState(_printer);
+        printState();
         while (!ifOver()) {
             String command = _printer.readFromKeyboard("Player P" + (_turn ? "1" : "2") + "'s turn - Specify house number or 'q' to quit: ");
             if (command.equals("q")) {
                 break;
             } else if (command.matches("[1-6]")) {
                 int number = Integer.parseInt(command);
-                doAction(number, _printer);
+                doAction(number);
             }
-            printState(_printer);
+            printState();
         }
 
         _printer.println("Game over");
-        printState(_printer);
+        printState();
         // check if the game naturally finished
         if (ifOver()){
-            printResult(_printer);
+            printResult();
         }
     }
 
-    private void doAction(int storeNum, IO io) {
+    private void doAction(int storeNum) {
         // check if the 'position' has values
         IStore oriStore = (_turn == PLAYER_1 ? _p1Stores.get(storeNum - 1) : _p2Stores.get(storeNum - 1));
         int seeds = oriStore.takeAll();
         if (seeds == 0){
-            io.println("House is empty. Move again.");
+            _printer.println("House is empty. Move again.");
             return;
         }
 
@@ -138,38 +138,36 @@ public class Board implements IBoard {
 
     /**
      * Helper function to printing out the output
-     * @param io
      */
-    private void printState(IO io) {
+    private void printState() {
         int p1Amount = _p1house.getAmount();
         int p2Amount = _p2house.getAmount();
 
-        io.println("+----+-------+-------+-------+-------+-------+-------+----+");
+        _printer.println("+----+-------+-------+-------+-------+-------+-------+----+");
 
-        io.print("| P2 ");
+        _printer.print("| P2 ");
         for (int i = 6; i > 0; i--) {
             int amount = _p2Stores.get(i - 1).getAmount();
-            io.print("| " + i + "["  + (amount<10 ? " "+ amount : amount) + "] ");
+            _printer.print("| " + i + "["  + (amount<10 ? " "+ amount : amount) + "] ");
         }
-        io.println("| " + (p1Amount <10 ? " "+p1Amount : p1Amount) + " |");
+        _printer.println("| " + (p1Amount <10 ? " "+p1Amount : p1Amount) + " |");
 
-        io.println("|    |-------+-------+-------+-------+-------+-------|    |");
+        _printer.println("|    |-------+-------+-------+-------+-------+-------|    |");
 
-        io.print("| " + (p2Amount <10 ? " "+p2Amount : p2Amount) + " ");
+        _printer.print("| " + (p2Amount <10 ? " "+p2Amount : p2Amount) + " ");
         for (int i = 0; i < 6; i++) {
             int amount = _p1Stores.get(i).getAmount();
-            io.print("| " + (i + 1) + "[" +  (amount<10 ? " "+ amount : amount)  + "] ");
+            _printer.print("| " + (i + 1) + "[" +  (amount<10 ? " "+ amount : amount)  + "] ");
         }
-        io.println("| P1 |");
+        _printer.println("| P1 |");
 
-        io.println("+----+-------+-------+-------+-------+-------+-------+----+");
+        _printer.println("+----+-------+-------+-------+-------+-------+-------+----+");
     }
 
     /**
      * Print the result of the game when it has naturally finished
-     * @param io
      */
-    private void printResult(IO io){
+    private void printResult(){
         int p1sum = _p1house.getAmount();
         int p2sum = _p2house.getAmount();
 
@@ -180,13 +178,13 @@ public class Board implements IBoard {
             p2sum+=s.getAmount();
         }
 
-        io.println("\tplayer 1:"+p1sum);
-        io.println("\tplayer 2:"+p2sum);
+        _printer.println("\tplayer 1:"+p1sum);
+        _printer.println("\tplayer 2:"+p2sum);
         if (p1sum!=p2sum){
-            io.println("Player " + (p1sum>p2sum ? 1 : 2) + " wins!");
+            _printer.println("Player " + (p1sum>p2sum ? 1 : 2) + " wins!");
         } else {
 
-            io.println("A tie!");
+            _printer.println("A tie!");
         }
     }
 }
