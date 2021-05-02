@@ -21,7 +21,6 @@ public class Board implements IBoard {
         setUp();
         printState(io);
         while (!ifOver()) {
-//            printState(io);
             String command = io.readFromKeyboard("Player P" + (_turn ? "1" : "2") + "'s turn - Specify house number or 'q' to quit: ");
             if (command.equals("q")) {
                 break;
@@ -31,25 +30,12 @@ public class Board implements IBoard {
             }
             printState(io);
         }
+
         io.println("Game over");
         printState(io);
+        // check if the game naturally finished
         if (ifOver()){
-            int p1sum = _p1house.getAmount();
-            int p2sum = _p2house.getAmount();
-            for (IStore s: _p1Stores){
-                p1sum+=s.getAmount();
-            }
-            for (IStore s: _p2Stores){
-                p2sum+=s.getAmount();
-            }
-            io.println("\tplayer 1:"+p1sum);
-            io.println("\tplayer 2:"+p2sum);
-            if (p1sum!=p2sum){
-                io.println("Player " + (p1sum>p2sum ? 1 : 2) + " wins!");
-            } else {
-
-                io.println("A tie!");
-            }
+            printResult(io);
         }
 
     }
@@ -69,7 +55,7 @@ public class Board implements IBoard {
             if (midpoint) {
                 for (IStore store : (turn ? _p1Stores : _p2Stores)) {
                     if (store.getNumber() > storeNum) {
-                        store.add(1);
+                        store.addAmount(1);
                         seeds--;
                         // if it ends on a store, swap player
                         if (seeds == 0) {
@@ -99,7 +85,7 @@ public class Board implements IBoard {
                     }
                 }
                 for (IStore store : (turn ? _p1Stores : _p2Stores)) {
-                    store.add(1);
+                    store.addAmount(1);
                     seeds--;
                     // if it ends on a store, swap player
                     if (seeds == 0) {
@@ -162,9 +148,7 @@ public class Board implements IBoard {
             int amount = _p2Stores.get(i - 1).getAmount();
             io.print("| " + i + "["  + (amount<10 ? " "+ amount : amount) + "] ");
         }
-//        io.println("| " + (p1Amount > 9 ? p1Amount / 10 : " ") + _p1house.getAmount() % 10 + " |");
         io.println("| " + (p1Amount <10 ? " "+p1Amount : p1Amount) + " |");
-
 
         io.println("|    |-------+-------+-------+-------+-------+-------|    |");
 
@@ -176,6 +160,28 @@ public class Board implements IBoard {
         io.println("| P1 |");
 
         io.println("+----+-------+-------+-------+-------+-------+-------+----+");
+    }
 
+    /**
+     * Print the result of the game when it has naturally finished
+     * @param io
+     */
+    private void printResult(IO io){
+        int p1sum = _p1house.getAmount();
+        int p2sum = _p2house.getAmount();
+        for (IStore s: _p1Stores){
+            p1sum+=s.getAmount();
+        }
+        for (IStore s: _p2Stores){
+            p2sum+=s.getAmount();
+        }
+        io.println("\tplayer 1:"+p1sum);
+        io.println("\tplayer 2:"+p2sum);
+        if (p1sum!=p2sum){
+            io.println("Player " + (p1sum>p2sum ? 1 : 2) + " wins!");
+        } else {
+
+            io.println("A tie!");
+        }
     }
 }

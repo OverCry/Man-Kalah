@@ -20,7 +20,7 @@ public class Store implements IStore {
     }
 
     @Override
-    public void add(int amount) {
+    public void addAmount(int amount) {
         _amount+=amount;
     }
 
