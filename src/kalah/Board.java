@@ -157,8 +157,6 @@ public class Board implements IBoard {
         for (int i =1;i<=_players;i++){
             _teams.add(new Team(_stalls,_startingSeeds,i));
         }
-//        _teams.add(new Team(_stalls,_startingSeeds));
-//        _teams.add(new Team(_stalls,_startingSeeds));
     }
 
     /**
@@ -220,15 +218,25 @@ public class Board implements IBoard {
      * Print the result of the game when it has naturally finished
      */
     private void printResult(){
-        int p1sum = _teams.get(PLAYER_1).getScore();
-        int p2sum = _teams.get(PLAYER_2).getScore();
+        StringBuilder winner = new StringBuilder();
+        int highest_score = 0;
+        for (ITeam team : _teams){
+            int score = team.getScore();
+            _printer.println("\tplayer "+team.getTeamNumber()+":"+score);
 
-        _printer.println("\tplayer 1:"+p1sum);
-        _printer.println("\tplayer 2:"+p2sum);
-        if (p1sum!=p2sum){
-            _printer.println("Player " + (p1sum>p2sum ? 1 : 2) + " wins!");
-        } else {
+            if (score>highest_score){
+                winner = new StringBuilder(team.getTeamNumber());
+                highest_score=score;
+            } else if (score == highest_score){
+                winner.append(team.getTeamNumber()).append(",");
+            }
+        }
+
+        String winString = winner.toString();
+        if (winString.equals("")){
             _printer.println("A tie!");
+        } else {
+            _printer.println("Player " + winString.substring(0,winString.length()-1) + " wins!");
         }
     }
 }
