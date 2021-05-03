@@ -9,3 +9,5 @@
 out/
 .idea/
 a3-modular-kalah-OverCry.iml
+bin/
+Makefile
