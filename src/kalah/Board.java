@@ -67,9 +67,9 @@ public class Board implements IBoard {
     }
 
     private void doAction(int storeNum) {
-        // check if the 'position' has values
-        IStore oriStore = _teams.get(_turn).getStore(storeNum);
-
+        ITeam team = _teams.get(_turn);
+        // check if the number is a valid move
+        IStore oriStore = team.getStore(storeNum);
         int seeds = oriStore.takeAll();
         // check if empty
         if (seeds == 0){
@@ -77,62 +77,8 @@ public class Board implements IBoard {
             return;
         }
 
-        int side = _turn;
-        boolean midpoint = true;
-        while (seeds > 0) {
-            if (midpoint) {
-                for (IStore store : _teams.get(side).getStores()) {
-                    if (store.getNumber() > storeNum) {
-                        store.addAmount(1);
-                        seeds--;
-                        // if it ends on a store, swap player
-                        if (seeds == 0) {
-                            if (store.getAmount()==1){
-                                int pos = store.getNumber();
-                                IStore opposite = _teams.get(side==PLAYER_1 ? PLAYER_2:PLAYER_1).getStore(7-pos);
-
-                                if (opposite.getAmount()>0) {
-                                    int add = store.takeAll();
-                                    // get all from opposite
-                                    _teams.get(side==PLAYER_1 ? PLAYER_1:PLAYER_2).getHouse().addAmount(opposite.takeAll() + add);
-                                }
-                            }
-                            _turn = (_turn==PLAYER_1 ? PLAYER_2 : PLAYER_1);
-                            break;
-                        }
-
-                    }
-                }
-                midpoint = false;
-            } else {
-                if (side != _turn) {
-                    (_teams.get(_turn)).getHouse().addAmount(1);
-                    seeds--;
-                    if (seeds == 0) {
-                        break; //TODO return?
-                    }
-                }
-                for (IStore store : _teams.get(side).getStores()) {
-                    store.addAmount(1);
-                    seeds--;
-                    // if it ends on a store, swap player
-                    if (seeds == 0) {
-                        if (store.getAmount()==1 && side == _turn){
-                            int pos = store.getNumber();
-                            IStore opposite = _teams.get(side==PLAYER_1 ? PLAYER_2:PLAYER_1).getStore(7-pos);
-                            if (opposite.getAmount()>0) {
-                                int add = store.takeAll();
-                                // get all from opposite
-                                _teams.get(side==PLAYER_1 ? PLAYER_1:PLAYER_2).getHouse().addAmount(opposite.takeAll() + add);
-                            }
-                        }
-                        _turn = (_turn==PLAYER_1 ? PLAYER_2 : PLAYER_1);
-                        break;
-                    }
-                }
-            }
-
-            side = (side==PLAYER_1 ? PLAYER_2 : PLAYER_1);
+        if (!team.inputStart(storeNum,seeds,_turn+1)){
+            _turn=(_turn+1)%_players;
         }
     }
 
@@ -154,9 +100,14 @@ public class Board implements IBoard {
      * Set up teams
      */
     private void setUp() {
+        // initilize all teams
         for (int i =1;i<=_players;i++){
-            _teams.add(new Team(_stalls,_startingSeeds,i));
+            _teams.add(new Team(_stalls,_startingSeeds,i,_players));
         }
+        for (ITeam team: _teams){
+            team.addNext(_teams.get((team.getTeamNumber()%_players)));
+        }
+
     }
 
     /**

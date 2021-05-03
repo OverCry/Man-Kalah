@@ -14,4 +14,18 @@ public interface ITeam {
 
     int getTeamNumber();
 
+    /**
+     * true means they take another turn
+     * @param starting
+     * @param seeds
+     * @param player
+     * @return
+     */
+    boolean inputStart(Integer starting,int seeds, int player);
+
+    boolean input(int seeds, int player);
+
+    boolean again();
+
+    void addNext(ITeam nextTeam);
 }
