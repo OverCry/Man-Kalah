@@ -23,17 +23,23 @@ public class Board implements IBoard {
     private IHouse _p1house = new House();
     private IHouse _p2house = new House();
     private IO _printer;
+
+    /**
+     * Field variables for modularity
+     */
     private int _stalls = 6;
     private int _startingSeeds = 4;
+    private int _players = 2;
 
     public Board(IO io) {
         setUp();
         _printer = io;
     }
 
-    public Board(IO io,int stalls,int startSeeds) {
+    public Board(IO io,int stalls,int startSeeds, int players) {
         _stalls = stalls;
         _startingSeeds = startSeeds;
+        _players = players;
         setUp();
         _printer = io;
     }
@@ -157,6 +163,7 @@ public class Board implements IBoard {
 
     /**
      * Helper function to printing out the output
+     * Current formatting expects only two players
      */
     private void printState() {
 
@@ -215,6 +222,8 @@ public class Board implements IBoard {
         int p1sum = _p1house.getAmount();
         int p2sum = _p2house.getAmount();
 
+        // create a list of players
+
         for (IStore s: _p1Stores){
             p1sum+=s.getAmount();
         }
@@ -227,7 +236,6 @@ public class Board implements IBoard {
         if (p1sum!=p2sum){
             _printer.println("Player " + (p1sum>p2sum ? 1 : 2) + " wins!");
         } else {
-
             _printer.println("A tie!");
         }
     }
