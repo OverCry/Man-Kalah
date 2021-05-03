@@ -10,6 +10,11 @@ import java.util.List;
 
 public class Printer{
     public static Printer _instance = null;
+
+    /**
+     * final values for players
+     * very temporary as this only works for two players
+     */
     final private int PLAYER_1 = 0;
     final private int PLAYER_2 = 1;
 

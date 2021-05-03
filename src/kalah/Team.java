@@ -53,7 +53,14 @@ public class Team implements ITeam {
     }
 
     @Override
-    public boolean inputStart(Integer starting,int seeds, int player) {
+    public boolean moveAtMid(Integer starting, int seeds, int player) {
+//        List<IStore> relevantStores = new ArrayList<>();
+//        for (IStore store: _stores){
+//            if (store.getNumber()>starting) {
+//                relevantStores.add(store);
+//            }
+//        }
+
         for (IStore store: _stores){
             if (store.getNumber()>starting){
                 store.addAmount(1);
@@ -78,11 +85,11 @@ public class Team implements ITeam {
             return true;
         }
         //otherwise
-        return _nextTeam.input(seeds,player);
+        return _nextTeam.move(seeds,player);
     }
 
     @Override
-    public boolean input(int seeds, int player) {
+    public boolean move(int seeds, int player) {
         for (IStore store: _stores){
             store.addAmount(1);
             seeds--;
@@ -105,17 +112,12 @@ public class Team implements ITeam {
                 return true;
             }
         }
-        return _nextTeam.input(seeds,player);
+        return _nextTeam.move(seeds,player);
     }
 
-    @Override
-    public boolean again() {
-        if (_again){
-            _again=false;
-            return true;
-        }
-        return false;
-    }
+//    private boolean addOwn(int seed, int player){
+//        if (player == _teamNum)
+//    }
 
     @Override
     public void addNext(ITeam nextTeam) {

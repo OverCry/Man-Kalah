@@ -20,6 +20,7 @@ public class Board implements IBoard {
 
     /**
      * Field variables for modularity
+     * These are default values
      */
     private int _stalls = 6;
     private int _startingSeeds = 4;
@@ -74,7 +75,7 @@ public class Board implements IBoard {
             return;
         }
 
-        if (!team.inputStart(storeNum,seeds,_turn+1)){
+        if (!team.moveAtMid(storeNum,seeds,_turn+1)){
             _turn=(_turn+1)%_players;
         }
     }
@@ -107,6 +108,7 @@ public class Board implements IBoard {
         for (int i =1;i<=_players;i++){
             _teams.add(new Team(_stalls,_startingSeeds,i,_players));
         }
+        //link each team to the next person
         for (ITeam team: _teams){
             team.addNext(_teams.get((team.getTeamNumber()%_players)));
         }

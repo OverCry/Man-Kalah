@@ -21,11 +21,9 @@ public interface ITeam {
      * @param player
      * @return
      */
-    boolean inputStart(Integer starting,int seeds, int player);
+    boolean moveAtMid(Integer starting, int seeds, int player);
 
-    boolean input(int seeds, int player);
-
-    boolean again();
+    boolean move(int seeds, int player);
 
     void addNext(ITeam nextTeam);
 }
