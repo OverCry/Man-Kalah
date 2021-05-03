@@ -11,12 +11,16 @@ public class Team implements ITeam {
     private List<IStore> _stores = new ArrayList<>();
     private IHouse _house = new House();
     private int _teamNum;
+    private boolean _again=false;
+    private ITeam _nextTeam;
+    private int _numTeams;
 
-    public Team(int stalls,int startingSeeds, int number){
+    public Team(int stalls,int startingSeeds, int number, int teams){
         for (int i = 1; i <= stalls; i++) {
             _stores.add(new Store(i,startingSeeds));
         }
         _teamNum = number;
+        _numTeams = teams;
     }
 
     @Override
@@ -46,5 +50,77 @@ public class Team implements ITeam {
     @Override
     public int getTeamNumber() {
         return _teamNum;
+    }
+
+    @Override
+    public boolean moveAtMid(Integer starting, int seeds, int player) {
+//        List<IStore> relevantStores = new ArrayList<>();
+//        for (IStore store: _stores){
+//            if (store.getNumber()>starting) {
+//                relevantStores.add(store);
+//            }
+//        }
+
+        for (IStore store: _stores){
+            if (store.getNumber()>starting){
+                store.addAmount(1);
+                seeds--;
+                if (seeds == 0){
+                    //input logic for checking if 'stealling
+                    if (player == _teamNum && store.getAmount()==1){
+                        //check if 'next' neighbour has any seeds
+                        int oppositeAmount = _nextTeam.getStore(_stores.size()-store.getNumber()+1).takeAll();
+                        if (oppositeAmount != 0){
+                            _house.addAmount(oppositeAmount+store.takeAll());
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
+        //add one to yourself if there is still any
+        _house.addAmount(1);
+        seeds--;
+        if (seeds == 0){
+            return true;
+        }
+        //otherwise
+        return _nextTeam.move(seeds,player);
+    }
+
+    @Override
+    public boolean move(int seeds, int player) {
+        for (IStore store: _stores){
+            store.addAmount(1);
+            seeds--;
+            if (seeds == 0){
+                //input logic for checking if 'stealling
+                if (player == _teamNum && store.getAmount()==1){
+                    //check if 'next' neighbour has any seeds
+                    int oppositeAmount = _nextTeam.getStore(_stores.size()-store.getNumber()+1).takeAll();
+                    if (oppositeAmount != 0){
+                        _house.addAmount(oppositeAmount+store.takeAll());
+                    }
+                }
+                return false;
+            }
+        }
+        if (player==_teamNum){
+            _house.addAmount(1);
+            seeds--;
+            if (seeds == 0){
+                return true;
+            }
+        }
+        return _nextTeam.move(seeds,player);
+    }
+
+//    private boolean addOwn(int seed, int player){
+//        if (player == _teamNum)
+//    }
+
+    @Override
+    public void addNext(ITeam nextTeam) {
+        _nextTeam=nextTeam;
     }
 }

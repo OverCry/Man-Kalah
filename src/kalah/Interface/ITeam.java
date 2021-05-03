@@ -14,4 +14,16 @@ public interface ITeam {
 
     int getTeamNumber();
 
+    /**
+     * true means they take another turn
+     * @param starting
+     * @param seeds
+     * @param player
+     * @return
+     */
+    boolean moveAtMid(Integer starting, int seeds, int player);
+
+    boolean move(int seeds, int player);
+
+    void addNext(ITeam nextTeam);
 }

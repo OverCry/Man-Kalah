@@ -14,7 +14,7 @@ public class Kalah {
 	}
 	public void play(IO io) {
 		IBoard game = new Board(io);
-//		IBoard game = new Board(io,10,8,2);
+//		IBoard game = new Board(io,10,8,5);
 
 		game.play();
 	}
