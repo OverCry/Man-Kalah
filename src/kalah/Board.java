@@ -1,13 +1,10 @@
 package kalah;
 
 import com.qualitascorpus.testsupport.IO;
-import kalah.Interface.IBoard;
-import kalah.Interface.IHouse;
-import kalah.Interface.IStore;
-import kalah.Interface.ITeam;
+import kalah.Interface.*;
+import kalah.Singleton.Printer;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,11 +13,10 @@ import java.util.List;
  * Written by: Wong Chong
  */
 public class Board implements IBoard {
-    final private int PLAYER_1 = 0;
-    final private int PLAYER_2 = 1;
-    private int _turn;
+    private int _turn = 0;
     private List<ITeam> _teams = new ArrayList<>();
-    private IO _printer;
+    private IO _io;
+    private Printer _printer;
 
     /**
      * Field variables for modularity
@@ -31,8 +27,8 @@ public class Board implements IBoard {
 
     public Board(IO io) {
         setUp();
-        _printer = io;
-        _turn = PLAYER_1;
+        _io = io;
+        _printer = Printer.getInstance();
     }
 
     public Board(IO io,int stalls,int startSeeds, int players) {
@@ -40,13 +36,14 @@ public class Board implements IBoard {
         _startingSeeds = startSeeds;
         _players = players;
         setUp();
-        _printer = io;
+        _io = io;
+
     }
 
     public void play(){
-        printState();
+        _printer.printState(_io, _teams,_stalls);
         while (!ifOver()) {
-            String command = _printer.readFromKeyboard("Player P" + (_turn+1) + "'s turn - Specify house number or 'q' to quit: ");
+            String command = _io.readFromKeyboard("Player P" + (_turn+1) + "'s turn - Specify house number or 'q' to quit: ");
             if (command.equals("q")) {
                 break;
             } else if (command.matches("[1-9]*")) {
@@ -55,14 +52,14 @@ public class Board implements IBoard {
                     doAction(number);
                 }
             }
-            printState();
+            _printer.printState(_io, _teams,_stalls);
         }
 
-        _printer.println("Game over");
-        printState();
+        _io.println("Game over");
+        _printer.printState(_io, _teams,_stalls);
         // check if the game naturally finished
         if (ifOver()){
-            printResult();
+            _printer.printResult(_io, _teams);
         }
     }
 
@@ -73,13 +70,19 @@ public class Board implements IBoard {
         int seeds = oriStore.takeAll();
         // check if empty
         if (seeds == 0){
-            _printer.println("House is empty. Move again.");
+            _io.println("House is empty. Move again.");
             return;
         }
 
         if (!team.inputStart(storeNum,seeds,_turn+1)){
             _turn=(_turn+1)%_players;
         }
+    }
+
+    @Override
+    public void reset() {
+        _teams = new ArrayList<>();
+        setUp();
     }
 
     /**
@@ -110,84 +113,5 @@ public class Board implements IBoard {
 
     }
 
-    /**
-     * Helper function to printing out the output
-     * Current formatting expects only two players
-     */
-    private void printState() {
-        _printer.print("+----");
-        for (int i=0;i<_stalls;i++){
-            _printer.print("+-------");
-        }
-        _printer.println("+----+");
 
-        // p2 | stalls for p2 | score of p1
-        _printer.print("| P2 ");
-        List<IStore> stores2 = _teams.get(PLAYER_2).getStores();
-        Collections.reverse(stores2);
-        for (IStore store : stores2) {
-            _printer.print("|" + printNumber(store.getNumber()) + "["  + printNumber(store.getAmount()) + "] ");
-        }
-        Collections.reverse(stores2);
-        _printer.println("| " + printNumber(_teams.get(PLAYER_1).getHouse().getAmount()) + " |");
-
-        _printer.print("|    |");
-        for (int i=0;i<_stalls-1;i++){
-            _printer.print("-------+");
-        }
-        _printer.println("-------|    |");
-
-        // score of p2 | stalls for p1 | p2
-        List<IStore> stores1 = _teams.get(PLAYER_1).getStores();
-        _printer.print("| " + printNumber(_teams.get(PLAYER_2).getHouse().getAmount()) + " ");
-        for (IStore store : stores1){
-            _printer.print("|" + printNumber(store.getNumber()) + "[" +  printNumber(store.getAmount())  + "] ");
-        }
-        _printer.println("| P1 |");
-
-        _printer.print("+----");
-        for (int i=0;i<_stalls;i++){
-            _printer.print("+-------");
-        }
-        _printer.println("+----+");
-    }
-
-    /**
-     * formats a number to the correct string format
-     * ONLY intended for double digits
-     * @param number
-     * @return
-     */
-    private String printNumber(int number){
-        if (number>9){
-            return Integer.toString(number);
-        }
-        return " "+number;
-    }
-
-    /**
-     * Print the result of the game when it has naturally finished
-     */
-    private void printResult(){
-        List<String> winNumbers = new ArrayList<>();
-        int highestScore = 0;
-        for (ITeam team : _teams){
-            int score = team.getScore();
-            _printer.println("\tplayer "+team.getTeamNumber()+":"+score);
-
-            if (score>highestScore){
-                winNumbers = new ArrayList<>();
-                winNumbers.add(team.getTeamNumber()+"");
-                highestScore=score;
-            } else if (score == highestScore){
-                winNumbers.add(team.getTeamNumber()+"");
-            }
-        }
-
-        if (winNumbers.size()>1){
-            _printer.println("A tie!");
-        } else if (winNumbers.size()==1) {
-            _printer.println("Player " + winNumbers.get(0) + " wins!");
-        }
-    }
 }
