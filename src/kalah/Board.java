@@ -154,8 +154,11 @@ public class Board implements IBoard {
      * Set up teams
      */
     private void setUp() {
-        _teams.add(new Team(_stalls,_startingSeeds));
-        _teams.add(new Team(_stalls,_startingSeeds));
+        for (int i =1;i<=_players;i++){
+            _teams.add(new Team(_stalls,_startingSeeds,i));
+        }
+//        _teams.add(new Team(_stalls,_startingSeeds));
+//        _teams.add(new Team(_stalls,_startingSeeds));
     }
 
     /**

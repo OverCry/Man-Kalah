@@ -12,4 +12,6 @@ public interface ITeam {
 
     int getScore();
 
+    int getTeamNumber();
+
 }

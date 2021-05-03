@@ -10,11 +10,13 @@ import java.util.List;
 public class Team implements ITeam {
     private List<IStore> _stores = new ArrayList<>();
     private IHouse _house = new House();
+    private int _teamNum;
 
-    public Team(int stalls,int startingSeeds){
+    public Team(int stalls,int startingSeeds, int number){
         for (int i = 1; i <= stalls; i++) {
             _stores.add(new Store(i,startingSeeds));
         }
+        _teamNum = number;
     }
 
     @Override
@@ -39,5 +41,10 @@ public class Team implements ITeam {
             res+=s.getAmount();
         }
         return res;
+    }
+
+    @Override
+    public int getTeamNumber() {
+        return _teamNum;
     }
 }
