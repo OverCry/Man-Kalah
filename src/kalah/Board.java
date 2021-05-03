@@ -94,7 +94,7 @@ public class Board implements IBoard {
                                 if (opposite.getAmount()>0) {
                                     int add = store.takeAll();
                                     // get all from opposite
-                                    _teams.get(side==PLAYER_1 ? PLAYER_2:PLAYER_1).getHouse().addAmount(opposite.takeAll() + add);
+                                    _teams.get(side==PLAYER_1 ? PLAYER_1:PLAYER_2).getHouse().addAmount(opposite.takeAll() + add);
                                 }
                             }
                             _turn = (_turn==PLAYER_1 ? PLAYER_2 : PLAYER_1);
@@ -123,7 +123,7 @@ public class Board implements IBoard {
                             if (opposite.getAmount()>0) {
                                 int add = store.takeAll();
                                 // get all from opposite
-                                _teams.get(side==PLAYER_1 ? PLAYER_2:PLAYER_1).getHouse().addAmount(opposite.takeAll() + add);
+                                _teams.get(side==PLAYER_1 ? PLAYER_1:PLAYER_2).getHouse().addAmount(opposite.takeAll() + add);
                             }
                         }
                         _turn = (_turn==PLAYER_1 ? PLAYER_2 : PLAYER_1);
@@ -177,17 +177,17 @@ public class Board implements IBoard {
             _printer.print("|" + printNumber(store.getNumber()) + "["  + printNumber(store.getAmount()) + "] ");
         }
         Collections.reverse(stores2);
-        _printer.println("| " + printNumber(_teams.get(PLAYER_2).getHouse().getAmount()) + " |");
+        _printer.println("| " + printNumber(_teams.get(PLAYER_1).getHouse().getAmount()) + " |");
 
         _printer.print("|    |");
-        for (int i=0;i<_stalls;i++){
-            _printer.print("-------|");
+        for (int i=0;i<_stalls-1;i++){
+            _printer.print("-------+");
         }
-        _printer.println("    |");
+        _printer.println("-------|    |");
 
         // score of p2 | stalls for p1 | p2
         List<IStore> stores1 = _teams.get(PLAYER_1).getStores();
-        _printer.print("| " + printNumber(_teams.get(PLAYER_1).getHouse().getAmount()) + " ");
+        _printer.print("| " + printNumber(_teams.get(PLAYER_2).getHouse().getAmount()) + " ");
         for (IStore store : stores1){
             _printer.print("|" + printNumber(store.getNumber()) + "[" +  printNumber(store.getAmount())  + "] ");
         }
