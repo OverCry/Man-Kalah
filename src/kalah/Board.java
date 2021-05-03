@@ -218,25 +218,25 @@ public class Board implements IBoard {
      * Print the result of the game when it has naturally finished
      */
     private void printResult(){
-        StringBuilder winner = new StringBuilder();
-        int highest_score = 0;
+        List<String> winNumbers = new ArrayList<>();
+        int highestScore = 0;
         for (ITeam team : _teams){
             int score = team.getScore();
             _printer.println("\tplayer "+team.getTeamNumber()+":"+score);
 
-            if (score>highest_score){
-                winner = new StringBuilder(team.getTeamNumber());
-                highest_score=score;
-            } else if (score == highest_score){
-                winner.append(team.getTeamNumber()).append(",");
+            if (score>highestScore){
+                winNumbers = new ArrayList<>();
+                winNumbers.add(team.getTeamNumber()+"");
+                highestScore=score;
+            } else if (score == highestScore){
+                winNumbers.add(team.getTeamNumber()+"");
             }
         }
 
-        String winString = winner.toString();
-        if (winString.equals("")){
+        if (winNumbers.size()>1){
             _printer.println("A tie!");
         } else {
-            _printer.println("Player " + winString.substring(0,winString.length()-1) + " wins!");
+            _printer.println("Player " + winNumbers.get(0) + " wins!");
         }
     }
 }
