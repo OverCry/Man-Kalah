@@ -235,7 +235,7 @@ public class Board implements IBoard {
 
         if (winNumbers.size()>1){
             _printer.println("A tie!");
-        } else {
+        } else if (winNumbers.size()==1) {
             _printer.println("Player " + winNumbers.get(0) + " wins!");
         }
     }
