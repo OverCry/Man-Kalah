@@ -3,11 +3,11 @@ package kalah;
 import kalah.Interface.IStore;
 
 public class Store implements IStore {
-    int _amount = 4;
+    int _amount;
     int _number;
 
-    public Store(int number){
-        _number = number;
+    public Store(int number, int startingSeeds){
+        _number = number; _amount =startingSeeds;
     }
 
     @Override

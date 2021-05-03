@@ -11,9 +11,9 @@ public class Team implements ITeam {
     private List<IStore> _stores = new ArrayList<>();
     private IHouse _house = new House();
 
-    public Team(){
-        for (int i = 1; i <= 6; i++) {
-            _stores.add(new Store(i));
+    public Team(int stalls,int startingSeeds){
+        for (int i = 1; i <= stalls; i++) {
+            _stores.add(new Store(i,startingSeeds));
         }
     }
 

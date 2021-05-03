@@ -6,6 +6,7 @@ import kalah.Interface.IBoard;
 
 /**
  * Main class for (Man)Kalah
+ * Written by: Wong Chong
  */
 public class Kalah {
 	public static void main(String[] args) {
@@ -13,6 +14,8 @@ public class Kalah {
 	}
 	public void play(IO io) {
 		IBoard game = new Board(io);
+//		IBoard game = new Board(io,10,8,2);
+
 		game.play();
 	}
 }
