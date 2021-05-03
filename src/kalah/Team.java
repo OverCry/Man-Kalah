@@ -60,12 +60,12 @@ public class Team implements ITeam {
                 seeds--;
                 if (seeds == 0){
                     //input logic for checking if 'stealling
-                    if (player == _teamNum){
+                    if (player == _teamNum && store.getAmount()==1){
                         //check if 'next' neighbour has any seeds
-//                        int oppositeAmount = _nextTeam.getStore(_stores.size()-store.getNumber()+1).takeAll();
-//                        if (oppositeAmount != 0){
-//                            _house.addAmount(oppositeAmount+store.takeAll());
-//                        }
+                        int oppositeAmount = _nextTeam.getStore(_stores.size()-store.getNumber()+1).takeAll();
+                        if (oppositeAmount != 0){
+                            _house.addAmount(oppositeAmount+store.takeAll());
+                        }
                     }
                     return false;
                 }
@@ -88,14 +88,14 @@ public class Team implements ITeam {
             seeds--;
             if (seeds == 0){
                 //input logic for checking if 'stealling
-                if (player == _teamNum){
+                if (player == _teamNum && store.getAmount()==1){
                     //check if 'next' neighbour has any seeds
-//                    int oppositeAmount = _nextTeam.getStore(_stores.size()-store.getNumber()+1).takeAll();
-//                    if (oppositeAmount != 0){
-//                        _house.addAmount(oppositeAmount+store.takeAll());
-//                    }
+                    int oppositeAmount = _nextTeam.getStore(_stores.size()-store.getNumber()+1).takeAll();
+                    if (oppositeAmount != 0){
+                        _house.addAmount(oppositeAmount+store.takeAll());
+                    }
                 }
-                break;
+                return false;
             }
         }
         if (player==_teamNum){
@@ -105,7 +105,7 @@ public class Team implements ITeam {
                 return true;
             }
         }
-        return false;
+        return _nextTeam.input(seeds,player);
     }
 
     @Override
