@@ -16,7 +16,7 @@ public class Board implements IBoard {
     private int _turn = 0;
     private List<ITeam> _teams = new ArrayList<>();
     private IO _io;
-    private Printer _printer;
+    private Printer _printer = Printer.getInstance();
 
     /**
      * Field variables for modularity
@@ -29,7 +29,6 @@ public class Board implements IBoard {
     public Board(IO io) {
         setUp();
         _io = io;
-        _printer = Printer.getInstance();
     }
 
     public Board(IO io,int stalls,int startSeeds, int players) {
@@ -38,7 +37,6 @@ public class Board implements IBoard {
         _players = players;
         setUp();
         _io = io;
-
     }
 
     public void play(){

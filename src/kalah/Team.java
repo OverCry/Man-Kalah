@@ -115,10 +115,6 @@ public class Team implements ITeam {
         return _nextTeam.move(seeds,player);
     }
 
-//    private boolean addOwn(int seed, int player){
-//        if (player == _teamNum)
-//    }
-
     @Override
     public void addNext(ITeam nextTeam) {
         _nextTeam=nextTeam;
