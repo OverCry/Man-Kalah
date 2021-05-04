@@ -2,8 +2,8 @@ package kalah;
 
 import kalah.Interface.IStore;
 
-public class Store implements IStore {
-    private int _amount;
+public class Store extends Storage implements IStore {
+
     private int _number;
 
     public Store(int number, int startingSeeds){
@@ -15,15 +15,6 @@ public class Store implements IStore {
         return _number;
     }
 
-    @Override
-    public int getAmount() {
-        return _amount;
-    }
-
-    @Override
-    public void addAmount(int amount) {
-        _amount+=amount;
-    }
 
     @Override
     public int takeAll() {
