@@ -11,9 +11,9 @@ public class Team implements ITeam {
     private List<IStore> _stores = new ArrayList<>();
     private IHouse _house = new House();
     private int _teamNum;
-    private boolean _again=false;
     private ITeam _nextTeam;
     private int _numTeams;
+    private int _addSead = 1;
 
     public Team(int stalls,int startingSeeds, int number, int teams){
         for (int i = 1; i <= stalls; i++) {
@@ -54,33 +54,17 @@ public class Team implements ITeam {
 
     @Override
     public boolean moveAtMid(Integer starting, int seeds, int player) {
-//        List<IStore> relevantStores = new ArrayList<>();
-//        for (IStore store: _stores){
-//            if (store.getNumber()>starting) {
-//                relevantStores.add(store);
-//            }
-//        }
-
         for (IStore store: _stores){
             if (store.getNumber()>starting){
-                store.addAmount(1);
-                seeds--;
-                if (seeds == 0){
-                    //input logic for checking if 'stealling
-                    if (player == _teamNum && store.getAmount()==1){
-                        //check if 'next' neighbour has any seeds
-                        int oppositeAmount = _nextTeam.getStore(_stores.size()-store.getNumber()+1).takeAll();
-                        if (oppositeAmount != 0){
-                            _house.addAmount(oppositeAmount+store.takeAll());
-                        }
-                    }
+                seeds = remainingSeeds(seeds, player, store);
+                if (seeds==0){
                     return false;
                 }
             }
         }
-        //add one to yourself if there is still any
-        _house.addAmount(1);
-        seeds--;
+        //add one to yourself as there are still seed(s)
+        _house.addAmount(_addSead);
+        seeds-=_addSead;
         if (seeds == 0){
             return true;
         }
@@ -91,23 +75,14 @@ public class Team implements ITeam {
     @Override
     public boolean move(int seeds, int player) {
         for (IStore store: _stores){
-            store.addAmount(1);
-            seeds--;
-            if (seeds == 0){
-                //input logic for checking if 'stealling
-                if (player == _teamNum && store.getAmount()==1){
-                    //check if 'next' neighbour has any seeds
-                    int oppositeAmount = _nextTeam.getStore(_stores.size()-store.getNumber()+1).takeAll();
-                    if (oppositeAmount != 0){
-                        _house.addAmount(oppositeAmount+store.takeAll());
-                    }
-                }
+            seeds = remainingSeeds(seeds, player, store);
+            if (seeds==0){
                 return false;
             }
         }
         if (player==_teamNum){
-            _house.addAmount(1);
-            seeds--;
+            _house.addAmount(_addSead);
+            seeds-=_addSead;
             if (seeds == 0){
                 return true;
             }
@@ -115,9 +90,30 @@ public class Team implements ITeam {
         return _nextTeam.move(seeds,player);
     }
 
-//    private boolean addOwn(int seed, int player){
-//        if (player == _teamNum)
-//    }
+    /**
+     * add a certain amount of seeds
+     * returns the remaining amount of seeds
+     * @param seeds
+     * @param player
+     * @param store
+     * @return
+     */
+    private int remainingSeeds(int seeds, int player, IStore store) {
+        store.addAmount(_addSead);
+        seeds -=_addSead;
+        if (seeds == 0){
+            //input logic for checking if 'stealling
+            if (player == _teamNum && store.getAmount()==_addSead){
+                //check if 'next' neighbour has any seeds
+                int oppositeAmount = _nextTeam.getStore(_stores.size()-store.getNumber()+1).takeAll();
+                if (oppositeAmount != 0){
+                    _house.addAmount(oppositeAmount+store.takeAll());
+                }
+            }
+            return 0;
+        }
+        return seeds;
+    }
 
     @Override
     public void addNext(ITeam nextTeam) {
