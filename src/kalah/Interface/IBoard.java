@@ -6,5 +6,8 @@ public interface IBoard {
      */
     void play();
 
+    /**
+     * restart the game
+     */
     void reset();
 }
