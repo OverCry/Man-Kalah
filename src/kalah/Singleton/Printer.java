@@ -31,36 +31,42 @@ public class Printer{
      */
     public void printState(IO printer, List<ITeam> teams, int stalls) {
 
-        printer.print("+----");
-        for (int i=0;i<stalls;i++){
-            printer.print("+-------");
-        }
-        printer.println("+----+");
+        printBars(printer,stalls);
 
-        // p2 | stalls for p2 | score of p1
-        printer.print("| P2 ");
-        List<IStore> stores2 = teams.get(PLAYER_2).getStores();
-        Collections.reverse(stores2);
-        for (IStore store : stores2) {
-            printer.print("|" + printNumber(store.getNumber()) + "["  + printNumber(store.getAmount()) + "] ");
-        }
-        Collections.reverse(stores2);
-        printer.println("| " + printNumber(teams.get(PLAYER_1).getHouse().getAmount()) + " |");
+        Collections.reverse(teams);
+        for (ITeam team : teams){
+            if (team.getTeamNumber()%2==0){
+                printer.print("| P"+team.getTeamNumber()+" ");
+                Collections.reverse(team.getStores());
+                for (IStore store : team.getStores()) {
+                    printer.print("|" + printNumber(store.getNumber()) + "["  + printNumber(store.getAmount()) + "] ");
+                }
+                printer.println("| " + printNumber(team.getNextTeam().getHouse().getAmount()) + " |");
 
+                Collections.reverse(team.getStores());
+                printSeparater(printer, stalls);
+            } else {
+                printer.print("| " + printNumber(team.getNextTeam().getHouse().getAmount()) + " ");
+                for (IStore store : team.getStores()){
+                    printer.print("|" + printNumber(store.getNumber()) + "[" +  printNumber(store.getAmount())  + "] ");
+                }
+                printer.println("| P"+team.getTeamNumber()+" |");
+                printBars(printer,stalls);
+
+            }
+        }
+        Collections.reverse(teams);
+    }
+
+    private void printSeparater(IO printer, int stalls){
         printer.print("|    |");
         for (int i=0;i<stalls-1;i++){
             printer.print("-------+");
         }
         printer.println("-------|    |");
+    }
 
-        // score of p2 | stalls for p1 | p2
-        List<IStore> stores1 = teams.get(PLAYER_1).getStores();
-        printer.print("| " + printNumber(teams.get(PLAYER_2).getHouse().getAmount()) + " ");
-        for (IStore store : stores1){
-            printer.print("|" + printNumber(store.getNumber()) + "[" +  printNumber(store.getAmount())  + "] ");
-        }
-        printer.println("| P1 |");
-
+    private void printBars(IO printer, int stalls){
         printer.print("+----");
         for (int i=0;i<stalls;i++){
             printer.print("+-------");

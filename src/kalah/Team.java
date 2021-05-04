@@ -119,4 +119,9 @@ public class Team implements ITeam {
     public void addNext(ITeam nextTeam) {
         _nextTeam=nextTeam;
     }
+
+    @Override
+    public ITeam getNextTeam() {
+        return _nextTeam;
+    }
 }

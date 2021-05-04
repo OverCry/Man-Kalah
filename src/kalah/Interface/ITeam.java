@@ -57,4 +57,9 @@ public interface ITeam {
      * @param nextTeam
      */
     void addNext(ITeam nextTeam);
+
+    /**
+     * get next team
+     */
+    ITeam getNextTeam();
 }

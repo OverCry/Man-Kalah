@@ -38,7 +38,7 @@ public class Board implements IBoard {
         _players = players;
         setUp();
         _io = io;
-
+        _printer = Printer.getInstance();
     }
 
     public void play(){
