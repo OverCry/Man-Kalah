@@ -1,0 +1,39 @@
+#TITLE	OO Measurements
+#SUMMARY	Description of static structure of system. Includes measurements of individual modules and measurements of the overall design.
+
+##Dataset attributes
+Timestamp	Sun May 16 20:43:12 NZST 2021
+Tool	mete-analysis(static structure):20180206T1230
+System	a3-modular-kalah-OverCry
+Codebase	submissions/a3-modular-kalah-OverCry/a3-modular-kalah-OverCry
+
+##Module Attributes
+#Entity	Ce	Ca	CON	DIF	DIM	DSF	DSM	DSFF	MIF	MIM	MSF	MSM	MAIN	CLS	INT	ENM	ANN	EXP	NST	EXT	IMP	MDUInh	MInhF	CeR	CaR
+kalah.Board	6	1	2	6	5	0	0	0	6	5	0	0	0	1	0	0	0	0	0	0	1	1	0	0.545	0.091
+kalah.House	2	1	1	0	0	0	0	0	1	2	0	0	0	1	0	0	0	0	0	1	1	1	0	0.182	0.091
+kalah.Interface.IBoard	0	2	0	0	2	0	0	0	0	2	0	0	0	0	1	0	0	0	0	0	0	0	1	0.000	0.182
+kalah.Interface.IHouse	0	4	0	0	2	0	0	0	0	2	0	0	0	0	1	0	0	0	0	0	0	0	1	0.000	0.364
+kalah.Interface.IStore	0	5	0	0	4	0	0	0	0	4	0	0	0	0	1	0	0	0	0	0	0	0	1	0.000	0.455
+kalah.Interface.ITeam	2	3	0	0	8	0	0	0	0	8	0	0	0	0	1	0	0	0	0	0	0	0	1	0.182	0.273
+kalah.Kalah	2	0	1	0	1	0	0	0	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0.182	0.000
+kalah.Singleton.Printer	5	1	1	2	3	1	1	0	2	3	1	1	0	1	0	0	0	0	0	0	0	0	0	0.455	0.091
+kalah.Storage	0	2	1	1	2	0	0	0	1	2	0	0	0	1	0	0	0	0	0	0	0	0	1	0.000	0.182
+kalah.Store	2	3	1	1	2	0	0	0	2	4	0	0	0	1	0	0	0	0	0	1	1	1	0	0.182	0.273
+kalah.Team	5	2	1	6	9	0	0	0	6	9	0	0	0	1	0	0	0	0	0	0	1	1	0	0.455	0.182
+
+##Design Attributes
+a3-modular-kalah-OverCry	
+Total_Modules	11
+#CLS	7
+#INT	4
+#ENM	0
+#ANN	0
+#EXP	0
+#NST	0
+#MAIN	1
+DUI	0.364
+IF	0.455
+#IND	4
+#NDP	1
+NoInstanceMethods	0
+NoInstanceFields	0

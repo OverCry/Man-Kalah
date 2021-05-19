@@ -1,0 +1,379 @@
+# Dependencies for a3-modular-kalah-OverCry
+# Analyse and report dependencies of modules.
+
+# Summary Information
+# Timestamp	Sun May 16 20:50:15 NZST 2021
+# Tool	mete-analysis(dependencies):20170202T1945
+# System	a3-modular-kalah-OverCry
+# Codebase	./submissions/a3-modular-kalah-OverCry/a3-modular-kalah-OverCry
+
+# Attribute Descriptions
+# 1	Source	The name of the module the dependency is from.
+# 2	Package	The package the source module belongs to. Provided for convenience as it is part of the source name
+# 3	Kind	Modules are classified into 1 of 5 'Kinds': Class, Interface, Enum, Annotation, Exception. 
+# 4	Modifiers	The modifiers for the source module (comma separated).
+# 5	Target	The name of the module the dependency is to.
+# 6	Package	The package the target module belongs to. Provided for convenience as it is part of the target name
+# 7	Kind	Modules are classified into 1 of 5 'Kinds': Class, Interface, Enum, Annotation, Exception. 
+# 8	Category	Dependencies are classified according to what kind of dependency they represent.
+# 9	Area	Classification of the area of the source module the dependency originates from.
+# 10	Details	More details of the origin of the dependency. Typically formatted text.
+# 11	Locations	Even more details of the origin of the dependency. Typically formatted text.
+# 12	Target	Information about the target of the dependency within the target module, if such makes sense.
+# 13	Visibility	The degree to which the dependency is visible outside the source module
+# 14	Inheritance	In what way is the dependency due to inheritance (if it is)
+
+# Data
+# Source	Package	Kind	Modifiers	Target	Package	Kind	Category	Area	Details	Locations	Target	Visibility	Inheritance
+kalah.Interface.IStore	kalah.Interface	Interface	public,abstract	int*		Primitive	Return	Method	kalah.Interface.IStore#public abstract int getNumber() <>		To whole module	Public	None
+kalah.Interface.IStore	kalah.Interface	Interface	public,abstract	int*		Primitive	Return	Method	kalah.Interface.IStore#public abstract int getAmount() <>		To whole module	Public	None
+kalah.Interface.IStore	kalah.Interface	Interface	public,abstract	int*		Primitive	Parameter	Method	kalah.Interface.IStore#public abstract void addAmount(int) <>	0	To whole module	Public	None
+kalah.Interface.IStore	kalah.Interface	Interface	public,abstract	void*		Primitive	Return	Method	kalah.Interface.IStore#public abstract void addAmount(int) <>		To whole module	Public	None
+kalah.Interface.IStore	kalah.Interface	Interface	public,abstract	int*		Primitive	Return	Method	kalah.Interface.IStore#public abstract int takeAll() <>		To whole module	Public	None
+kalah.House	kalah	Class	public	kalah.Storage	kalah	Class	Extends	Header			To whole module	Public	None
+kalah.House	kalah	Class	public	kalah.Interface.IHouse	kalah.Interface	Interface	Implements	Header			To whole module	Public	None
+kalah.House	kalah	Class	public	kalah.Storage	kalah	Class	InvokeSuper	Method	kalah.House#public <init>() {}	1	kalah.Storage#public <init>() {}	Private	None
+kalah.House	kalah	Class	public	kalah.House	kalah	Class	Put	Method	kalah.House#public <init>() {}	2	kalah.House#int _amount*	Private	None
+kalah.House	kalah	Class	public	kalah.Storage	kalah	Class	Put	Method	kalah.House#public <init>() {}	2	kalah.Storage#default int _amount	Private	Inherited
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Singleton.Printer#public <init>() {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	Put	Method	kalah.Singleton.Printer#public <init>() {}	2	kalah.Singleton.Printer#private final int PLAYER_1	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	Put	Method	kalah.Singleton.Printer#public <init>() {}	3	kalah.Singleton.Printer#private final int PLAYER_2	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	Return	Method	kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}		To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	InvokeSpecial	Method	kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}	2	kalah.Singleton.Printer#public <init>() {}	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	PutStatic	Method	kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}	3	kalah.Singleton.Printer#public static kalah.Singleton.Printer _instance	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	GetStatic	Method	kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}	1,4	kalah.Singleton.Printer#public static kalah.Singleton.Printer _instance	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	0	To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	Parameter	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	1	To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	int*		Primitive	Parameter	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	2	To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	void*		Primitive	Return	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}		To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	int*		Primitive	Local	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	0,2,4	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Local	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	1,3	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	Local	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	5,6	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	1,2,4,24,37,38,53,69,71,72	com.qualitascorpus.testsupport.IO#void print(java.lang.String) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	3,36,39,70,73	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	5,28,40,45	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	7,42	kalah.Interface.ITeam#public abstract java.util.List getStores() <>	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	7,42	kalah.Team#public java.util.List getStores() {}	Private	Polymorphic
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.Collections*	java.util	Class	InvokeStatic	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	8,25	java.util.Collections#void reverse(java.util.List) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	9,54	java.util.List#java.util.Iterator iterator() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	10,55	java.util.Iterator#boolean hasNext() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	11,56	java.util.Iterator#java.lang.Object next() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	13,26,43,58	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	14,27,44,59	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	15,60	kalah.Interface.IStore#public abstract int getNumber() <>	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Store	kalah	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	15,60	kalah.Store#public int getNumber() {}	Private	Polymorphic
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	16,32,49,61	kalah.Singleton.Printer#public java.lang.String printNumber(int) {}	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	19,64	kalah.Interface.IStore#public abstract int getAmount() <>	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	23,35,52,68	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	30,47	kalah.Interface.ITeam#public abstract kalah.Interface.IHouse getHouse() <>	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	30,47	kalah.Team#public kalah.Interface.IHouse getHouse() {}	Private	Polymorphic
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.IHouse	kalah.Interface	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	31,48	kalah.Interface.IHouse#public abstract int getAmount() <>	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Cast	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	57	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Cast	Method	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	46	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	int*		Primitive	Parameter	Method	kalah.Singleton.Printer#public java.lang.String printNumber(int) {}	0	To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.String*	java.lang	Class	Return	Method	kalah.Singleton.Printer#public java.lang.String printNumber(int) {}		To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.Integer*	java.lang	Class	InvokeStatic	Method	kalah.Singleton.Printer#public java.lang.String printNumber(int) {}	1	java.lang.Integer#java.lang.String toString(int) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.Singleton.Printer#public java.lang.String printNumber(int) {}	2	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Singleton.Printer#public java.lang.String printNumber(int) {}	3	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Singleton.Printer#public java.lang.String printNumber(int) {}	4	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Singleton.Printer#public java.lang.String printNumber(int) {}	5	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	0	To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	Parameter	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	1	To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	void*		Primitive	Return	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}		To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	int*		Primitive	Local	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	0,3	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Local	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	1	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	Local	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	2	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.ArrayList*	java.util	Class	InvokeSpecial	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	1,15	java.util.ArrayList#<init>() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	2	java.util.List#java.util.Iterator iterator() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	3	java.util.Iterator#boolean hasNext() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	4	java.util.Iterator#java.lang.Object next() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	6	kalah.Interface.ITeam#public abstract int getScore() <>	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	6	kalah.Team#public int getScore() {}	Private	Polymorphic
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	7,16,22,31	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	8,19,25,32	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	9,17,23	kalah.Interface.ITeam#public abstract int getTeamNumber() <>	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	9,17,23	kalah.Team#public int getTeamNumber() {}	Private	Polymorphic
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	10,18,24	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	13,20,26,37	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	14,29,38	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	21,27	java.util.List#boolean add(java.lang.Object) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	28,30	java.util.List#int size() <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	33	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Cast	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	5	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	java.lang.String*	java.lang	Class	Cast	Method	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	34	To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	PutStatic	Method	kalah.Singleton.Printer#default static <clinit>() {}	1	kalah.Singleton.Printer#public static kalah.Singleton.Printer _instance	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	Field	Field	kalah.Singleton.Printer#public static kalah.Singleton.Printer _instance		To whole module	Public	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	int*		Primitive	Field	Field	kalah.Singleton.Printer#private final int PLAYER_1		To whole module	Private	None
+kalah.Singleton.Printer	kalah.Singleton	Class	public	int*		Primitive	Field	Field	kalah.Singleton.Printer#private final int PLAYER_2		To whole module	Private	None
+kalah.Team	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Team	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Implements	Header			To whole module	Public	None
+kalah.Team	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.Team#public <init>(int,int,int,int) {}	0,1,2,3	To whole module	Public	None
+kalah.Team	kalah	Class	public	int*		Primitive	Local	Constructor	kalah.Team#public <init>(int,int,int,int) {}	0	To whole module	Private	None
+kalah.Team	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Team#public <init>(int,int,int,int) {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Team	kalah	Class	public	java.util.ArrayList*	java.util	Class	InvokeSpecial	Method	kalah.Team#public <init>(int,int,int,int) {}	2	java.util.ArrayList#<init>() <>*	Private	None
+kalah.Team	kalah	Class	public	kalah.House	kalah	Class	InvokeSpecial	Method	kalah.Team#public <init>(int,int,int,int) {}	4	kalah.House#public <init>() {}	Private	None
+kalah.Team	kalah	Class	public	kalah.Store	kalah	Class	InvokeSpecial	Method	kalah.Team#public <init>(int,int,int,int) {}	8	kalah.Store#public <init>(int,int) {}	Private	None
+kalah.Team	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Team#public <init>(int,int,int,int) {}	9	java.util.List#boolean add(java.lang.Object) <>*	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Put	Method	kalah.Team#public <init>(int,int,int,int) {}	6	kalah.Team#private int _addSead	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Put	Method	kalah.Team#public <init>(int,int,int,int) {}	5	kalah.Team#private kalah.Interface.IHouse _house	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Put	Method	kalah.Team#public <init>(int,int,int,int) {}	11	kalah.Team#private int _numTeams	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Put	Method	kalah.Team#public <init>(int,int,int,int) {}	3	kalah.Team#private java.util.List _stores	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public <init>(int,int,int,int) {}	7	kalah.Team#private java.util.List _stores	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Put	Method	kalah.Team#public <init>(int,int,int,int) {}	10	kalah.Team#private int _teamNum	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IHouse	kalah.Interface	Interface	Return	Method	kalah.Team#public kalah.Interface.IHouse getHouse() {}		To whole module	Public	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public kalah.Interface.IHouse getHouse() {}	1	kalah.Team#private kalah.Interface.IHouse _house	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Team#public kalah.Interface.IStore getStore(int) {}	0	To whole module	Public	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Return	Method	kalah.Team#public kalah.Interface.IStore getStore(int) {}		To whole module	Public	None
+kalah.Team	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Team#public kalah.Interface.IStore getStore(int) {}	2	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public kalah.Interface.IStore getStore(int) {}	1	kalah.Team#private java.util.List _stores	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Cast	Method	kalah.Team#public kalah.Interface.IStore getStore(int) {}	3	To whole module	Private	None
+kalah.Team	kalah	Class	public	java.util.List*	java.util	Interface	Return	Method	kalah.Team#public java.util.List getStores() {}		To whole module	Public	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public java.util.List getStores() {}	1	kalah.Team#private java.util.List _stores	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Return	Method	kalah.Team#public int getScore() {}		To whole module	Public	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Local	Method	kalah.Team#public int getScore() {}	0	To whole module	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Local	Method	kalah.Team#public int getScore() {}	1	To whole module	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IHouse	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#public int getScore() {}	2	kalah.Interface.IHouse#public abstract int getAmount() <>	Private	None
+kalah.Team	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Team#public int getScore() {}	4	java.util.List#java.util.Iterator iterator() <>*	Private	None
+kalah.Team	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Team#public int getScore() {}	5	java.util.Iterator#boolean hasNext() <>*	Private	None
+kalah.Team	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Team#public int getScore() {}	6	java.util.Iterator#java.lang.Object next() <>*	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#public int getScore() {}	8	kalah.Interface.IStore#public abstract int getAmount() <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public int getScore() {}	1	kalah.Team#private kalah.Interface.IHouse _house	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public int getScore() {}	3	kalah.Team#private java.util.List _stores	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Cast	Method	kalah.Team#public int getScore() {}	7	To whole module	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Return	Method	kalah.Team#public int getTeamNumber() {}		To whole module	Public	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public int getTeamNumber() {}	1	kalah.Team#private int _teamNum	Private	None
+kalah.Team	kalah	Class	public	java.lang.Integer*	java.lang	Class	Parameter	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	0	To whole module	Public	None
+kalah.Team	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	1,2	To whole module	Public	None
+kalah.Team	kalah	Class	public	boolean*		Primitive	Return	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}		To whole module	Public	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Local	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	0	To whole module	Private	None
+kalah.Team	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	2	java.util.List#java.util.Iterator iterator() <>*	Private	None
+kalah.Team	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	3	java.util.Iterator#boolean hasNext() <>*	Private	None
+kalah.Team	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	4	java.util.Iterator#java.lang.Object next() <>*	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	6	kalah.Interface.IStore#public abstract int getNumber() <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Store	kalah	Class	InvokeInstance	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	6	kalah.Store#public int getNumber() {}	Private	Polymorphic
+kalah.Team	kalah	Class	public	java.lang.Integer*	java.lang	Class	InvokeInstance	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	7	java.lang.Integer#int intValue() <>*	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	InvokeSpecial	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	8	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IHouse	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	11	kalah.Interface.IHouse#public abstract void addAmount(int) <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	14	kalah.Interface.ITeam#public abstract boolean move(int,int) <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	14	kalah.Team#public boolean move(int,int) {}	Private	Polymorphic
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	10,12	kalah.Team#private int _addSead	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	9	kalah.Team#private kalah.Interface.IHouse _house	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	13	kalah.Team#private kalah.Interface.ITeam _nextTeam	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	1	kalah.Team#private java.util.List _stores	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Cast	Method	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	5	To whole module	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	0,1	To whole module	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Parameter	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	2	To whole module	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Return	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}		To whole module	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Local	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	0	To whole module	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	2	kalah.Interface.IStore#public abstract void addAmount(int) <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	5	kalah.Interface.IStore#public abstract int getAmount() <>	Private	None
+kalah.Team	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	9	java.util.List#int size() <>*	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	10	kalah.Interface.IStore#public abstract int getNumber() <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Store	kalah	Class	InvokeInstance	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	10	kalah.Store#public int getNumber() {}	Private	Polymorphic
+kalah.Team	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	11	kalah.Interface.ITeam#public abstract kalah.Interface.IStore getStore(int) <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	11	kalah.Team#public kalah.Interface.IStore getStore(int) {}	Private	Polymorphic
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	12,14	kalah.Interface.IStore#public abstract int takeAll() <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Store	kalah	Class	InvokeInstance	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	12,14	kalah.Store#public int takeAll() {}	Private	Polymorphic
+kalah.Team	kalah	Class	public	kalah.Interface.IHouse	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	15	kalah.Interface.IHouse#public abstract void addAmount(int) <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	1,3,6	kalah.Team#private int _addSead	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	13	kalah.Team#private kalah.Interface.IHouse _house	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	7	kalah.Team#private kalah.Interface.ITeam _nextTeam	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	8	kalah.Team#private java.util.List _stores	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	4	kalah.Team#private int _teamNum	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Team#public boolean move(int,int) {}	0,1	To whole module	Public	None
+kalah.Team	kalah	Class	public	boolean*		Primitive	Return	Method	kalah.Team#public boolean move(int,int) {}		To whole module	Public	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Local	Method	kalah.Team#public boolean move(int,int) {}	0	To whole module	Private	None
+kalah.Team	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Team#public boolean move(int,int) {}	2	java.util.List#java.util.Iterator iterator() <>*	Private	None
+kalah.Team	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Team#public boolean move(int,int) {}	3	java.util.Iterator#boolean hasNext() <>*	Private	None
+kalah.Team	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Team#public boolean move(int,int) {}	4	java.util.Iterator#java.lang.Object next() <>*	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	InvokeSpecial	Method	kalah.Team#public boolean move(int,int) {}	6	kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IHouse	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#public boolean move(int,int) {}	10	kalah.Interface.IHouse#public abstract void addAmount(int) <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Team#public boolean move(int,int) {}	13	kalah.Interface.ITeam#public abstract boolean move(int,int) <>	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Team#public boolean move(int,int) {}	13	kalah.Team#public boolean move(int,int) {}	Private	Polymorphic
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public boolean move(int,int) {}	9,11	kalah.Team#private int _addSead	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public boolean move(int,int) {}	8	kalah.Team#private kalah.Interface.IHouse _house	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public boolean move(int,int) {}	12	kalah.Team#private kalah.Interface.ITeam _nextTeam	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public boolean move(int,int) {}	1	kalah.Team#private java.util.List _stores	Private	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Get	Method	kalah.Team#public boolean move(int,int) {}	7	kalah.Team#private int _teamNum	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Cast	Method	kalah.Team#public boolean move(int,int) {}	5	To whole module	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Parameter	Method	kalah.Team#public void addNext(kalah.Interface.ITeam) {}	0	To whole module	Public	None
+kalah.Team	kalah	Class	public	void*		Primitive	Return	Method	kalah.Team#public void addNext(kalah.Interface.ITeam) {}		To whole module	Public	None
+kalah.Team	kalah	Class	public	kalah.Team	kalah	Class	Put	Method	kalah.Team#public void addNext(kalah.Interface.ITeam) {}	1	kalah.Team#private kalah.Interface.ITeam _nextTeam	Private	None
+kalah.Team	kalah	Class	public	java.util.List*	java.util	Interface	Field	Field	kalah.Team#private java.util.List _stores		To whole module	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.IHouse	kalah.Interface	Interface	Field	Field	kalah.Team#private kalah.Interface.IHouse _house		To whole module	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Field	Field	kalah.Team#private int _teamNum		To whole module	Private	None
+kalah.Team	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Field	Field	kalah.Team#private kalah.Interface.ITeam _nextTeam		To whole module	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Field	Field	kalah.Team#private int _numTeams		To whole module	Private	None
+kalah.Team	kalah	Class	public	int*		Primitive	Field	Field	kalah.Team#private int _addSead		To whole module	Private	None
+kalah.Interface.IBoard	kalah.Interface	Interface	public,abstract	void*		Primitive	Return	Method	kalah.Interface.IBoard#public abstract void play() <>		To whole module	Public	None
+kalah.Interface.IBoard	kalah.Interface	Interface	public,abstract	void*		Primitive	Return	Method	kalah.Interface.IBoard#public abstract void reset() <>		To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	int*		Primitive	Parameter	Method	kalah.Interface.ITeam#public abstract boolean move(int,int) <>	0,1	To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	boolean*		Primitive	Return	Method	kalah.Interface.ITeam#public abstract boolean move(int,int) <>		To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	int*		Primitive	Parameter	Method	kalah.Interface.ITeam#public abstract kalah.Interface.IStore getStore(int) <>	0	To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	kalah.Interface.IStore	kalah.Interface	Interface	Return	Method	kalah.Interface.ITeam#public abstract kalah.Interface.IStore getStore(int) <>		To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	java.util.List*	java.util	Interface	Return	Method	kalah.Interface.ITeam#public abstract java.util.List getStores() <>		To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	kalah.Interface.IHouse	kalah.Interface	Interface	Return	Method	kalah.Interface.ITeam#public abstract kalah.Interface.IHouse getHouse() <>		To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	int*		Primitive	Return	Method	kalah.Interface.ITeam#public abstract int getScore() <>		To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	int*		Primitive	Return	Method	kalah.Interface.ITeam#public abstract int getTeamNumber() <>		To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	java.lang.Integer*	java.lang	Class	Parameter	Method	kalah.Interface.ITeam#public abstract boolean moveAtMid(java.lang.Integer,int,int) <>	0	To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	int*		Primitive	Parameter	Method	kalah.Interface.ITeam#public abstract boolean moveAtMid(java.lang.Integer,int,int) <>	1,2	To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	boolean*		Primitive	Return	Method	kalah.Interface.ITeam#public abstract boolean moveAtMid(java.lang.Integer,int,int) <>		To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	kalah.Interface.ITeam	kalah.Interface	Interface	Parameter	Method	kalah.Interface.ITeam#public abstract void addNext(kalah.Interface.ITeam) <>	0	To whole module	Public	None
+kalah.Interface.ITeam	kalah.Interface	Interface	public,abstract	void*		Primitive	Return	Method	kalah.Interface.ITeam#public abstract void addNext(kalah.Interface.ITeam) <>		To whole module	Public	None
+kalah.Interface.IHouse	kalah.Interface	Interface	public,abstract	int*		Primitive	Return	Method	kalah.Interface.IHouse#public abstract int getAmount() <>		To whole module	Public	None
+kalah.Interface.IHouse	kalah.Interface	Interface	public,abstract	int*		Primitive	Parameter	Method	kalah.Interface.IHouse#public abstract void addAmount(int) <>	0	To whole module	Public	None
+kalah.Interface.IHouse	kalah.Interface	Interface	public,abstract	void*		Primitive	Return	Method	kalah.Interface.IHouse#public abstract void addAmount(int) <>		To whole module	Public	None
+kalah.Kalah	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Kalah	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Kalah#public <init>() {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.String*	java.lang	Class	Parameter	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	0	To whole module	Public	None
+kalah.Kalah	kalah	Class	public	void*		Primitive	Return	Method	kalah.Kalah#public static void main(java.lang.String[]) {}		To whole module	Public	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	InvokeSpecial	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	1	kalah.Kalah#public <init>() {}	Private	None
+kalah.Kalah	kalah	Class	public	com.qualitascorpus.testsupport.MockIO*?	com.qualitascorpus.testsupport	Unknown	InvokeSpecial	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	2	com.qualitascorpus.testsupport.MockIO#<init>() <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	InvokeInstance	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	3	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	Private	None
+kalah.Kalah	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	0	To whole module	Public	None
+kalah.Kalah	kalah	Class	public	void*		Primitive	Return	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}		To whole module	Public	None
+kalah.Kalah	kalah	Class	public	kalah.Interface.IBoard	kalah.Interface	Interface	Local	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	0	To whole module	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	1	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Interface.IBoard	kalah.Interface	Interface	InvokeInterface	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	2	kalah.Interface.IBoard#public abstract void play() <>	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	2	kalah.Board#public void play() {}	Private	Polymorphic
+kalah.Storage	kalah	Class	public,abstract	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Storage	kalah	Class	public,abstract	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Storage#public <init>() {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Storage	kalah	Class	public,abstract	int*		Primitive	Return	Method	kalah.Storage#public int getAmount() {}		To whole module	Public	None
+kalah.Storage	kalah	Class	public,abstract	kalah.Storage	kalah	Class	Get	Method	kalah.Storage#public int getAmount() {}	1	kalah.Storage#default int _amount	Private	None
+kalah.Storage	kalah	Class	public,abstract	int*		Primitive	Parameter	Method	kalah.Storage#public void addAmount(int) {}	0	To whole module	Public	None
+kalah.Storage	kalah	Class	public,abstract	void*		Primitive	Return	Method	kalah.Storage#public void addAmount(int) {}		To whole module	Public	None
+kalah.Storage	kalah	Class	public,abstract	kalah.Storage	kalah	Class	Put	Method	kalah.Storage#public void addAmount(int) {}	2	kalah.Storage#default int _amount	Private	None
+kalah.Storage	kalah	Class	public,abstract	kalah.Storage	kalah	Class	Get	Method	kalah.Storage#public void addAmount(int) {}	1	kalah.Storage#default int _amount	Private	None
+kalah.Storage	kalah	Class	public,abstract	int*		Primitive	Field	Field	kalah.Storage#default int _amount		To whole module	Default	None
+kalah.Board	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Board	kalah	Class	public	kalah.Interface.IBoard	kalah.Interface	Interface	Implements	Header			To whole module	Public	None
+kalah.Board	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Constructor	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	0	To whole module	Public	None
+kalah.Board	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Board	kalah	Class	public	java.util.ArrayList*	java.util	Class	InvokeSpecial	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	3	java.util.ArrayList#<init>() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	InvokeStatic	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	5	kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	10	kalah.Board#private void setUp() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	11	kalah.Board#private com.qualitascorpus.testsupport.IO _io	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	9	kalah.Board#private int _players	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	6	kalah.Board#private kalah.Singleton.Printer _printer	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	7	kalah.Board#private int _stalls	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	8	kalah.Board#private int _startingSeeds	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	4	kalah.Board#private java.util.List _teams	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}	2	kalah.Board#private int _turn	Private	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#private void setUp() {}		To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#private void setUp() {}	0	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Local	Method	kalah.Board#private void setUp() {}	1	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Team	kalah	Class	InvokeSpecial	Method	kalah.Board#private void setUp() {}	6	kalah.Team#public <init>(int,int,int,int) {}	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void setUp() {}	7	java.util.List#boolean add(java.lang.Object) <>*	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void setUp() {}	9	java.util.List#java.util.Iterator iterator() <>*	Private	None
+kalah.Board	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void setUp() {}	10	java.util.Iterator#boolean hasNext() <>*	Private	None
+kalah.Board	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void setUp() {}	11	java.util.Iterator#java.lang.Object next() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Board#private void setUp() {}	14	kalah.Interface.ITeam#public abstract int getTeamNumber() <>	Private	None
+kalah.Board	kalah	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Board#private void setUp() {}	14	kalah.Team#public int getTeamNumber() {}	Private	Polymorphic
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void setUp() {}	16	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Board#private void setUp() {}	18	kalah.Interface.ITeam#public abstract void addNext(kalah.Interface.ITeam) <>	Private	None
+kalah.Board	kalah	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Board#private void setUp() {}	18	kalah.Team#public void addNext(kalah.Interface.ITeam) {}	Private	Polymorphic
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void setUp() {}	1,5,15	kalah.Board#private int _players	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void setUp() {}	3	kalah.Board#private int _stalls	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void setUp() {}	4	kalah.Board#private int _startingSeeds	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void setUp() {}	2,8,13	kalah.Board#private java.util.List _teams	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Cast	Method	kalah.Board#private void setUp() {}	17	To whole module	Private	None
+kalah.Board	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Constructor	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	0	To whole module	Public	None
+kalah.Board	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	1,2,3	To whole module	Public	None
+kalah.Board	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Board	kalah	Class	public	java.util.ArrayList*	java.util	Class	InvokeSpecial	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	3	java.util.ArrayList#<init>() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	InvokeStatic	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	5	kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	13	kalah.Board#private void setUp() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	14	kalah.Board#private com.qualitascorpus.testsupport.IO _io	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	12,9	kalah.Board#private int _players	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	6	kalah.Board#private kalah.Singleton.Printer _printer	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	10,7	kalah.Board#private int _stalls	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	11,8	kalah.Board#private int _startingSeeds	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	4	kalah.Board#private java.util.List _teams	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}	2	kalah.Board#private int _turn	Private	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#public void play() {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#public void play() {}	0	To whole module	Private	None
+kalah.Board	kalah	Class	public	java.lang.String*	java.lang	Class	Local	Method	kalah.Board#public void play() {}	1	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	InvokeInstance	Method	kalah.Board#public void play() {}	5,24,31	kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Board#public void play() {}	6,32	kalah.Board#private boolean ifOver() {}	Private	None
+kalah.Board	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.Board#public void play() {}	8	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.Board	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Board#public void play() {}	9	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.Board	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Board#public void play() {}	11	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+kalah.Board	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Board#public void play() {}	13	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.Board	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.Board#public void play() {}	14	com.qualitascorpus.testsupport.IO#java.lang.String readFromKeyboard(java.lang.String) <>*	Private	None
+kalah.Board	kalah	Class	public	java.lang.String*	java.lang	Class	InvokeInstance	Method	kalah.Board#public void play() {}	15	java.lang.String#boolean equals(java.lang.Object) <>*	Private	None
+kalah.Board	kalah	Class	public	java.lang.String*	java.lang	Class	InvokeInstance	Method	kalah.Board#public void play() {}	16	java.lang.String#boolean matches(java.lang.String) <>*	Private	None
+kalah.Board	kalah	Class	public	java.lang.Integer*	java.lang	Class	InvokeStatic	Method	kalah.Board#public void play() {}	17	java.lang.Integer#int parseInt(java.lang.String) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Board#public void play() {}	19	kalah.Board#private void doAction(int) {}	Private	None
+kalah.Board	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.Board#public void play() {}	26	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	InvokeInstance	Method	kalah.Board#public void play() {}	36	kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void play() {}	21,25,28,2,7,34	kalah.Board#private com.qualitascorpus.testsupport.IO _io	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void play() {}	20,27,1,33	kalah.Board#private kalah.Singleton.Printer _printer	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void play() {}	18,23,30,4	kalah.Board#private int _stalls	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void play() {}	22,29,3,35	kalah.Board#private java.util.List _teams	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void play() {}	10	kalah.Board#private int _turn	Private	None
+kalah.Board	kalah	Class	public	boolean*		Primitive	Return	Method	kalah.Board#private boolean ifOver() {}		To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Local	Method	kalah.Board#private boolean ifOver() {}	0	To whole module	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private boolean ifOver() {}	3	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Board#private boolean ifOver() {}	5	kalah.Interface.ITeam#public abstract java.util.List getStores() <>	Private	None
+kalah.Board	kalah	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Board#private boolean ifOver() {}	5	kalah.Team#public java.util.List getStores() {}	Private	Polymorphic
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private boolean ifOver() {}	6	java.util.List#java.util.Iterator iterator() <>*	Private	None
+kalah.Board	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Board#private boolean ifOver() {}	7	java.util.Iterator#boolean hasNext() <>*	Private	None
+kalah.Board	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Board#private boolean ifOver() {}	8	java.util.Iterator#java.lang.Object next() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Board#private boolean ifOver() {}	10	kalah.Interface.IStore#public abstract int getAmount() <>	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private boolean ifOver() {}	1	kalah.Board#private java.util.List _teams	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private boolean ifOver() {}	2	kalah.Board#private int _turn	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Cast	Method	kalah.Board#private boolean ifOver() {}	9	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Cast	Method	kalah.Board#private boolean ifOver() {}	4	To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Board#private void doAction(int) {}	0	To whole module	Private	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#private void doAction(int) {}		To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Local	Method	kalah.Board#private void doAction(int) {}	0	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Local	Method	kalah.Board#private void doAction(int) {}	1	To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#private void doAction(int) {}	2	To whole module	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void doAction(int) {}	3	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Board#private void doAction(int) {}	5	kalah.Interface.ITeam#public abstract kalah.Interface.IStore getStore(int) <>	Private	None
+kalah.Board	kalah	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Board#private void doAction(int) {}	5	kalah.Team#public kalah.Interface.IStore getStore(int) {}	Private	Polymorphic
+kalah.Board	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	InvokeInterface	Method	kalah.Board#private void doAction(int) {}	6	kalah.Interface.IStore#public abstract int takeAll() <>	Private	None
+kalah.Board	kalah	Class	public	kalah.Store	kalah	Class	InvokeInstance	Method	kalah.Board#private void doAction(int) {}	6	kalah.Store#public int takeAll() {}	Private	Polymorphic
+kalah.Board	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.Board#private void doAction(int) {}	8	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+kalah.Board	kalah	Class	public	java.lang.Integer*	java.lang	Class	InvokeStatic	Method	kalah.Board#private void doAction(int) {}	9	java.lang.Integer#java.lang.Integer valueOf(int) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	InvokeInterface	Method	kalah.Board#private void doAction(int) {}	11	kalah.Interface.ITeam#public abstract boolean moveAtMid(java.lang.Integer,int,int) <>	Private	None
+kalah.Board	kalah	Class	public	kalah.Team	kalah	Class	InvokeInstance	Method	kalah.Board#private void doAction(int) {}	11	kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}	Private	Polymorphic
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void doAction(int) {}	7	kalah.Board#private com.qualitascorpus.testsupport.IO _io	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void doAction(int) {}	13	kalah.Board#private int _players	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void doAction(int) {}	1	kalah.Board#private java.util.List _teams	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#private void doAction(int) {}	14	kalah.Board#private int _turn	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void doAction(int) {}	2,10,12	kalah.Board#private int _turn	Private	None
+kalah.Board	kalah	Class	public	kalah.Interface.ITeam	kalah.Interface	Interface	Cast	Method	kalah.Board#private void doAction(int) {}	4	To whole module	Private	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#public void reset() {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	java.util.ArrayList*	java.util	Class	InvokeSpecial	Method	kalah.Board#public void reset() {}	1	java.util.ArrayList#<init>() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Board#public void reset() {}	3	kalah.Board#private void setUp() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public void reset() {}	2	kalah.Board#private java.util.List _teams	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Field	Field	kalah.Board#private int _turn		To whole module	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	Field	Field	kalah.Board#private java.util.List _teams		To whole module	Private	None
+kalah.Board	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Field	Field	kalah.Board#private com.qualitascorpus.testsupport.IO _io		To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Singleton.Printer	kalah.Singleton	Class	Field	Field	kalah.Board#private kalah.Singleton.Printer _printer		To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Field	Field	kalah.Board#private int _stalls		To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Field	Field	kalah.Board#private int _startingSeeds		To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Field	Field	kalah.Board#private int _players		To whole module	Private	None
+kalah.Store	kalah	Class	public	kalah.Storage	kalah	Class	Extends	Header			To whole module	Public	None
+kalah.Store	kalah	Class	public	kalah.Interface.IStore	kalah.Interface	Interface	Implements	Header			To whole module	Public	None
+kalah.Store	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.Store#public <init>(int,int) {}	0,1	To whole module	Public	None
+kalah.Store	kalah	Class	public	kalah.Storage	kalah	Class	InvokeSuper	Method	kalah.Store#public <init>(int,int) {}	1	kalah.Storage#public <init>() {}	Private	None
+kalah.Store	kalah	Class	public	kalah.Store	kalah	Class	Put	Method	kalah.Store#public <init>(int,int) {}	3	kalah.Store#int _amount*	Private	None
+kalah.Store	kalah	Class	public	kalah.Storage	kalah	Class	Put	Method	kalah.Store#public <init>(int,int) {}	3	kalah.Storage#default int _amount	Private	Inherited
+kalah.Store	kalah	Class	public	kalah.Store	kalah	Class	Put	Method	kalah.Store#public <init>(int,int) {}	2	kalah.Store#private int _number	Private	None
+kalah.Store	kalah	Class	public	int*		Primitive	Return	Method	kalah.Store#public int getNumber() {}		To whole module	Public	None
+kalah.Store	kalah	Class	public	kalah.Store	kalah	Class	Get	Method	kalah.Store#public int getNumber() {}	1	kalah.Store#private int _number	Private	None
+kalah.Store	kalah	Class	public	int*		Primitive	Return	Method	kalah.Store#public int takeAll() {}		To whole module	Public	None
+kalah.Store	kalah	Class	public	int*		Primitive	Local	Method	kalah.Store#public int takeAll() {}	0	To whole module	Private	None
+kalah.Store	kalah	Class	public	kalah.Store	kalah	Class	InvokeInstance	Method	kalah.Store#public int takeAll() {}	1	kalah.Store#int getAmount() <>*	Private	None
+kalah.Store	kalah	Class	public	kalah.Storage	kalah	Class	InvokeInstance	Method	kalah.Store#public int takeAll() {}	1	kalah.Storage#public int getAmount() {}	Private	Inherited
+kalah.Store	kalah	Class	public	kalah.Store	kalah	Class	Put	Method	kalah.Store#public int takeAll() {}	2	kalah.Store#int _amount*	Private	None
+kalah.Store	kalah	Class	public	kalah.Storage	kalah	Class	Put	Method	kalah.Store#public int takeAll() {}	2	kalah.Storage#default int _amount	Private	Inherited
+kalah.Store	kalah	Class	public	int*		Primitive	Field	Field	kalah.Store#private int _number		To whole module	Private	None
+Main	null	Class	public	junit.framework.TestCase*?	junit.framework	Unknown	Extends	Header			To whole module	Public	None
+Main	null	Class	public	junit.framework.TestCase*?	junit.framework	Unknown	InvokeSuper	Method	Main#public <init>() {}	1	junit.framework.TestCase#<init>() <>*	Private	None
+Main	null	Class	public	java.lang.String*	java.lang	Class	Parameter	Method	Main#public static void main(java.lang.String[]) {}	0	To whole module	Public	None
+Main	null	Class	public	void*		Primitive	Return	Method	Main#public static void main(java.lang.String[]) {}		To whole module	Public	None
+Main	null	Class	public	junit.textui.TestRunner*?	junit.textui	Unknown	InvokeStatic	Method	Main#public static void main(java.lang.String[]) {}	1	junit.textui.TestRunner#void run(java.lang.Class) <>*	Private	None

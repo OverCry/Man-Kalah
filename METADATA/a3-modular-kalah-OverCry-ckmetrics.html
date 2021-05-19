@@ -1,0 +1,615 @@
+<html>
+<head>
+<style>
+  .stripe tbody tr:nth-child(even) td {background-color:#f2f2f2;}
+  div.scrollable { width: 100%; max-height: 100px; margin: 0; padding: 0; overflow: auto;}
+</style>
+</head>
+</html>
+<body>
+<h1>CK Metrics</h1>
+<p>Measurements for an interpretation of the metrics from the CK metrics suite</p>
+<h3>Dataset attributes</h3>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Timestamp
+</div></th>
+    <td><div class="scrollable">
+Sun May 16 20:38:32 NZST 2021
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Tool
+</div></th>
+    <td><div class="scrollable">
+mete-analysis(ck metrics):20180206T1230
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+System
+</div></th>
+    <td><div class="scrollable">
+a3-modular-kalah-OverCry
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Codebase
+</div></th>
+    <td><div class="scrollable">
+submissions/a3-modular-kalah-OverCry/a3-modular-kalah-OverCry
+</div></td>
+  </tr>
+</table>
+<h3>Measurements</h3>
+<h4>Metadata<h4>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+CKCBO (Coupling)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(trgtdcl) Only record dependencies to target modules whose declarations have been seen; (srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (trgtsttic) Record dependencies to both instance and static fields and methods in the target module; (srccons) Consider constructors as invokers as creating coupling; (trgtcons) Record both invoking methods and calling construtors as creating dependencies; (type) Record dependencies between all types, including interfaces, enums, an annotations; (anc) Include dependencies to ancestors of source; (desc) Include descendants to ancestors of source; (inh) Include dependencies on targets whose accessed members were inherited; (poly) Include dependencies on targets whose members were accessed via polymorphism; (bidir) Dependencies are recorded as bi-directional. If A has a dependency to B, then B has a dependency to A; (fanout) Record only dependencies from source to target (no-op when bidir); (mod) Record dependencies between modules (as opposed to between packages); (pres) Record only the presence (or not) of an occurrence of a dependency between entities; (nest) Consider nested or enclosing types are separate; (raw) Do not record dependencies due to synthetic constructs
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+WMC (Size)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+NOC (Inheritance)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+DIT (Inheritance)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+LCOM2 (Cohesion)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srcmeth) Do not consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (srcmem) Include dependencies to members of all visibilities in source
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+RFC (Coupling)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(trgtall) Record dependencies to target modules whether or not the declarations have been seen; (srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (trgtsttic) Record dependencies to both instance and static fields and methods in the target module; (trgtcons) Record both invoking methods and calling construtors as creating dependencies; (type) Record dependencies between all types, including interfaces, enums, an annotations
+</div></td>
+  </tr>
+</table>
+<h4>Data<h4>
+<div class="stripe">
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th><div class="scrollable">
+Entity
+</div></th>
+    <th><div class="scrollable">
+CKCBO (Coupling)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+WMC (Size)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+NOC (Inheritance)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DIT (Inheritance)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+LCOM2 (Cohesion)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+RFC (Coupling)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Board
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.Interface.IStore, kalah.Interface.ITeam, kalah.Singleton.Printer, kalah.Store, kalah.Team, kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Board#private boolean ifOver() {}, Return:kalah.Board#public void reset() {}, Return:kalah.Board#private void doAction(int) {}, kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.Board#private void setUp() {}, Return:kalah.Board#public void play() {}, kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+45
+</div></td>
+    <td><div class="scrollable">
+[ifOver()>kalah.Interface.IStore#public abstract int getAmount() <>, <init>(com.qualitascorpus.testsupport.IO,int,int,int)>java.util.ArrayList#<init>() <>*, <init>(com.qualitascorpus.testsupport.IO,int,int,int)>kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}, play()>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, play()>kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}, <init>(com.qualitascorpus.testsupport.IO)>java.lang.Object#public <init>() <>*, <init>(com.qualitascorpus.testsupport.IO)>kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}, <init>(com.qualitascorpus.testsupport.IO)>java.util.ArrayList#<init>() <>*, doAction(int)>kalah.Team#public kalah.Interface.IStore getStore(int) {}, doAction(int)>java.util.List#java.lang.Object get(int) <>*, ifOver()>java.util.Iterator#java.lang.Object next() <>*, play()>java.lang.StringBuilder#<init>() <>*, reset()>[D], doAction(int)>java.lang.Integer#java.lang.Integer valueOf(int) <>*, reset()>java.util.ArrayList#<init>() <>*, setUp()>java.util.Iterator#boolean hasNext() <>*, play()>java.lang.String#boolean equals(java.lang.Object) <>*, setUp()>kalah.Interface.ITeam#public abstract void addNext(kalah.Interface.ITeam) <>, play()>java.lang.String#boolean matches(java.lang.String) <>*, doAction(int)>kalah.Interface.ITeam#public abstract kalah.Interface.IStore getStore(int) <>, doAction(int)>kalah.Interface.ITeam#public abstract boolean moveAtMid(java.lang.Integer,int,int) <>, doAction(int)>kalah.Interface.IStore#public abstract int takeAll() <>, doAction(int)>kalah.Store#public int takeAll() {}, setUp()>kalah.Team#public <init>(int,int,int,int) {}, play()>java.lang.Integer#int parseInt(java.lang.String) <>*, setUp()>java.util.List#java.lang.Object get(int) <>*, ifOver()>java.util.List#java.util.Iterator iterator() <>*, setUp()>kalah.Team#public void addNext(kalah.Interface.ITeam) {}, play()>[D], <init>(com.qualitascorpus.testsupport.IO,int,int,int)>[D], setUp()>java.util.List#boolean add(java.lang.Object) <>*, ifOver()>java.util.Iterator#boolean hasNext() <>*, ifOver()>kalah.Interface.ITeam#public abstract java.util.List getStores() <>, setUp()>java.util.Iterator#java.lang.Object next() <>*, setUp()>java.util.List#java.util.Iterator iterator() <>*, <init>(com.qualitascorpus.testsupport.IO,int,int,int)>java.lang.Object#public <init>() <>*, setUp()>kalah.Team#public int getTeamNumber() {}, play()>java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*, ifOver()>java.util.List#java.lang.Object get(int) <>*, play()>java.lang.StringBuilder#java.lang.String toString() <>*, <init>(com.qualitascorpus.testsupport.IO)>[D], doAction(int)>kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}, play()>kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}, setUp()>kalah.Interface.ITeam#public abstract int getTeamNumber() <>, ifOver()>kalah.Team#public java.util.List getStores() {}]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.House
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.Storage, kalah.Team]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.House#public <init>() {}>kalah.Storage#public <init>() {}:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.House->kalah.Storage, kalah.Storage->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[<init>()>[D], <init>()>kalah.Storage#public <init>() {}]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Interface.IBoard
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Interface.IBoard#public abstract void play() <>, Return:kalah.Interface.IBoard#public abstract void reset() <>]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[play()>[D], reset()>[D]]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Interface.IHouse
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.Singleton.Printer, kalah.Team]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Interface.IHouse#public abstract int getAmount() <>, Return:kalah.Interface.IHouse#public abstract void addAmount(int) <>]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.House]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[getAmount()>[D], addAmount(int)>[D]]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Interface.IStore
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[kalah.Singleton.Printer, kalah.Team, kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Interface.IStore#public abstract void addAmount(int) <>, Return:kalah.Interface.IStore#public abstract int getAmount() <>, Return:kalah.Interface.IStore#public abstract int getNumber() <>, Return:kalah.Interface.IStore#public abstract int takeAll() <>]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Store]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[takeAll()>[D], getAmount()>[D], getNumber()>[D], addAmount(int)>[D]]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Interface.ITeam
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[kalah.Singleton.Printer, kalah.Team, kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+8
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Interface.ITeam#public abstract boolean moveAtMid(java.lang.Integer,int,int) <>, Return:kalah.Interface.ITeam#public abstract void addNext(kalah.Interface.ITeam) <>, Return:kalah.Interface.ITeam#public abstract int getScore() <>, Return:kalah.Interface.ITeam#public abstract boolean move(int,int) <>, Return:kalah.Interface.ITeam#public abstract kalah.Interface.IHouse getHouse() <>, Return:kalah.Interface.ITeam#public abstract int getTeamNumber() <>, Return:kalah.Interface.ITeam#public abstract java.util.List getStores() <>, Return:kalah.Interface.ITeam#public abstract kalah.Interface.IStore getStore(int) <>]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Team]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+8
+</div></td>
+    <td><div class="scrollable">
+[move(int,int)>[D], getScore()>[D], getTeamNumber()>[D], addNext(kalah.Interface.ITeam)>[D], getStore(int)>[D], moveAtMid(java.lang.Integer,int,int)>[D], getStores()>[D], getHouse()>[D]]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Kalah
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board, kalah.Interface.IBoard]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Kalah#public static void main(java.lang.String[]) {}, kalah.Kalah#public <init>() {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[play(com.qualitascorpus.testsupport.IO)>[D], play(com.qualitascorpus.testsupport.IO)>kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}, play(com.qualitascorpus.testsupport.IO)>kalah.Board#public void play() {}, <init>()>[D], play(com.qualitascorpus.testsupport.IO)>kalah.Interface.IBoard#public abstract void play() <>, main(java.lang.String[])>[D], <init>()>java.lang.Object#public <init>() <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Singleton.Printer
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.Interface.IStore, kalah.Interface.ITeam, kalah.Store, kalah.Interface.IHouse, kalah.Team, kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}, Return:kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}, Return:kalah.Singleton.Printer#public java.lang.String printNumber(int) {}, kalah.Singleton.Printer#public <init>() {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Singleton.Printer->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[value2, value1, value4, value3, value0]
+</div></td>
+    <td><div class="scrollable">
+42
+</div></td>
+    <td><div class="scrollable">
+[printNumber(int)>java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>java.util.Iterator#boolean hasNext() <>*, printNumber(int)>java.lang.StringBuilder#java.lang.String toString() <>*, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.util.Iterator#boolean hasNext() <>*, printNumber(int)>java.lang.StringBuilder#<init>() <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>kalah.Team#public kalah.Interface.IHouse getHouse() {}, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, getInstance()>[D], printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.util.List#java.util.Iterator iterator() <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>kalah.Team#public java.util.List getStores() {}, <init>()>[D], printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.util.List#int size() <>*, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.lang.StringBuilder#<init>() <>*, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.lang.StringBuilder#java.lang.String toString() <>*, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>kalah.Team#public int getTeamNumber() {}, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>kalah.Interface.IStore#public abstract int getNumber() <>, printNumber(int)>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>kalah.Interface.ITeam#public abstract int getTeamNumber() <>, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>kalah.Interface.ITeam#public abstract kalah.Interface.IHouse getHouse() <>, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.util.List#java.lang.Object get(int) <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>java.util.List#java.util.Iterator iterator() <>*, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.util.List#boolean add(java.lang.Object) <>*, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>kalah.Team#public int getScore() {}, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.util.Iterator#java.lang.Object next() <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>java.util.Iterator#java.lang.Object next() <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>kalah.Interface.ITeam#public abstract java.util.List getStores() <>, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>kalah.Interface.ITeam#public abstract int getScore() <>, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>kalah.Store#public int getNumber() {}, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>java.util.Collections#void reverse(java.util.List) <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>kalah.Interface.IHouse#public abstract int getAmount() <>, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>java.lang.StringBuilder#java.lang.String toString() <>*, <init>()>java.lang.Object#public <init>() <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, printNumber(int)>[D], printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>kalah.Interface.IStore#public abstract int getAmount() <>, printResult(com.qualitascorpus.testsupport.IO,java.util.List)>[D], printNumber(int)>java.lang.Integer#java.lang.String toString(int) <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>[D], printResult(com.qualitascorpus.testsupport.IO,java.util.List)>java.util.ArrayList#<init>() <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>java.util.List#java.lang.Object get(int) <>*, printState(com.qualitascorpus.testsupport.IO,java.util.List,int)>java.lang.StringBuilder#<init>() <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Storage
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.House, kalah.Store]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Storage#public int getAmount() {}, Return:kalah.Storage#public void addAmount(int) {}, kalah.Storage#public <init>() {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.House, kalah.Store]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Storage->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[getAmount()>[D], <init>()>[D], addAmount(int)>[D], <init>()>java.lang.Object#public <init>() <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Store
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.Storage, kalah.Singleton.Printer, kalah.Team, kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Store#public int getNumber() {}, Return:kalah.Store#public int takeAll() {}, kalah.Store#public <init>(int,int) {}>kalah.Storage#public <init>() {}:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.Store->kalah.Storage, kalah.Storage->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[value0]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[takeAll()>[D], takeAll()>kalah.Storage#public int getAmount() {}, getNumber()>[D], <init>(int,int)>kalah.Storage#public <init>() {}, <init>(int,int)>[D]]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Team
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[kalah.Interface.IStore, kalah.Interface.ITeam, kalah.House, kalah.Singleton.Printer, kalah.Store, kalah.Interface.IHouse, kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+10
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Team#public kalah.Interface.IStore getStore(int) {}, Return:kalah.Team#public boolean move(int,int) {}, Return:kalah.Team#public kalah.Interface.IHouse getHouse() {}, Return:kalah.Team#public boolean moveAtMid(java.lang.Integer,int,int) {}, Return:kalah.Team#private int remainingSeeds(int,int,kalah.Interface.IStore) {}, Return:kalah.Team#public java.util.List getStores() {}, Return:kalah.Team#public int getTeamNumber() {}, kalah.Team#public <init>(int,int,int,int) {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.Team#public void addNext(kalah.Interface.ITeam) {}, Return:kalah.Team#public int getScore() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Team->kalah.Interface.ITeam]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+42
+</div></td>
+    <td><div class="scrollable">
+[getTeamNumber()>[D], moveAtMid(java.lang.Integer,int,int)>kalah.Store#public int getNumber() {}, move(int,int)>kalah.Interface.IHouse#public abstract void addAmount(int) <>, remainingSeeds(int,int,kalah.Interface.IStore)>kalah.Store#public int takeAll() {}, <init>(int,int,int,int)>java.util.ArrayList#<init>() <>*, getScore()>kalah.Interface.IStore#public abstract int getAmount() <>, getStores()>[D], <init>(int,int,int,int)>[D], move(int,int)>java.util.Iterator#boolean hasNext() <>*, remainingSeeds(int,int,kalah.Interface.IStore)>kalah.Interface.IStore#public abstract void addAmount(int) <>, <init>(int,int,int,int)>java.lang.Object#public <init>() <>*, moveAtMid(java.lang.Integer,int,int)>java.util.List#java.util.Iterator iterator() <>*, move(int,int)>[D], remainingSeeds(int,int,kalah.Interface.IStore)>kalah.Interface.IStore#public abstract int takeAll() <>, remainingSeeds(int,int,kalah.Interface.IStore)>java.util.List#int size() <>*, addNext(kalah.Interface.ITeam)>[D], getStore(int)>[D], moveAtMid(java.lang.Integer,int,int)>java.util.Iterator#java.lang.Object next() <>*, moveAtMid(java.lang.Integer,int,int)>java.util.Iterator#boolean hasNext() <>*, moveAtMid(java.lang.Integer,int,int)>kalah.Interface.IStore#public abstract int getNumber() <>, getScore()>java.util.Iterator#java.lang.Object next() <>*, getHouse()>[D], remainingSeeds(int,int,kalah.Interface.IStore)>kalah.Interface.IHouse#public abstract void addAmount(int) <>, <init>(int,int,int,int)>kalah.Store#public <init>(int,int) {}, <init>(int,int,int,int)>java.util.List#boolean add(java.lang.Object) <>*, moveAtMid(java.lang.Integer,int,int)>kalah.Interface.IHouse#public abstract void addAmount(int) <>, getScore()>kalah.Interface.IHouse#public abstract int getAmount() <>, remainingSeeds(int,int,kalah.Interface.IStore)>kalah.Interface.IStore#public abstract int getNumber() <>, moveAtMid(java.lang.Integer,int,int)>[D], remainingSeeds(int,int,kalah.Interface.IStore)>kalah.Interface.IStore#public abstract int getAmount() <>, move(int,int)>java.util.List#java.util.Iterator iterator() <>*, <init>(int,int,int,int)>kalah.House#public <init>() {}, remainingSeeds(int,int,kalah.Interface.IStore)>kalah.Interface.ITeam#public abstract kalah.Interface.IStore getStore(int) <>, moveAtMid(java.lang.Integer,int,int)>kalah.Interface.ITeam#public abstract boolean move(int,int) <>, moveAtMid(java.lang.Integer,int,int)>java.lang.Integer#int intValue() <>*, getStore(int)>java.util.List#java.lang.Object get(int) <>*, move(int,int)>java.util.Iterator#java.lang.Object next() <>*, getScore()>[D], remainingSeeds(int,int,kalah.Interface.IStore)>kalah.Store#public int getNumber() {}, getScore()>java.util.Iterator#boolean hasNext() <>*, move(int,int)>kalah.Interface.ITeam#public abstract boolean move(int,int) <>, getScore()>java.util.List#java.util.Iterator iterator() <>*]
+</div></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+#TITLE	NCLOC for a3-modular-kalah-OverCry
+#SUMMARY	Non-comment non-blank lines of code per top-level module
+
+##Dataset attributes
+Timestamp	20210508 18:05:06 NZST
+Tool	loc.pl 20170704T0800
+System	a3-modular-kalah-OverCry
+Codebase	./submissions/a3-modular-kalah-OverCry/src
+
+##Measurements
+#Metadata
+NCLOC	UnboundedCount	Non-comment non-blank lines of code for module (first line with simple name to line with closing brace)
+#Data
+#Entity	NCLOC
+kalah.Board	73
+kalah.House	5
+kalah.Interface.IBoard	4
+kalah.Interface.IHouse	4
+kalah.Interface.IStore	6
+kalah.Interface.ITeam	10
+kalah.Kalah	9
+kalah.Singleton.Printer	68
+kalah.Storage	9
+kalah.Store	16
+kalah.Team	91

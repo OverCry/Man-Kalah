@@ -1,0 +1,40 @@
+@startuml
+title a3-modular-kalah-OverCry
+class kalah.Board
+class kalah.House
+interface kalah.Interface.IBoard
+interface kalah.Interface.IHouse
+interface kalah.Interface.IStore
+interface kalah.Interface.ITeam
+class kalah.Kalah
+class kalah.Singleton.Printer
+class kalah.Storage
+class kalah.Store
+class kalah.Team
+
+kalah.Interface.ITeam -->kalah.Interface.IStore
+kalah.Interface.ITeam -->kalah.Interface.IHouse
+kalah.House --|>kalah.Storage
+kalah.House --|>kalah.Interface.IHouse
+kalah.Singleton.Printer -->kalah.Interface.IStore
+kalah.Singleton.Printer -->kalah.Interface.ITeam
+kalah.Singleton.Printer -->kalah.Store
+kalah.Singleton.Printer -->kalah.Interface.IHouse
+kalah.Singleton.Printer -->kalah.Team
+kalah.Store --|>kalah.Interface.IStore
+kalah.Store --|>kalah.Storage
+kalah.Team -->kalah.Interface.IStore
+kalah.Team --okalah.Interface.ITeam
+kalah.Team --|>kalah.Interface.ITeam
+kalah.Team -->kalah.House
+kalah.Team -->kalah.Store
+kalah.Team -->kalah.Interface.IHouse
+kalah.Board -->kalah.Interface.IStore
+kalah.Board -->kalah.Interface.ITeam
+kalah.Board -->kalah.Singleton.Printer
+kalah.Board -->kalah.Store
+kalah.Board -->kalah.Team
+kalah.Board --|>kalah.Interface.IBoard
+kalah.Kalah -->kalah.Board
+kalah.Kalah -->kalah.Interface.IBoard
+@enduml
