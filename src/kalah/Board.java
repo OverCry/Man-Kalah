@@ -1,6 +1,7 @@
 package kalah;
 
 import kalah.Interface.ITeam;
+import kalah.Strategy.MovementStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,5 +21,9 @@ public class Board {
 
     public List<ITeam> getTeams(){
         return _teams;
+    }
+
+    public boolean doAction(MovementStrategy strategy, int position,int seeds, int turn){
+        return strategy.move(position,seeds,turn);
     }
 }

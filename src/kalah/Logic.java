@@ -5,6 +5,7 @@ import kalah.Interface.*;
 import kalah.Singleton.Printer;
 import kalah.Strategy.MovementStrategy;
 import kalah.Strategy.Player1Strategy;
+import kalah.Strategy.Player2Strategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,11 +29,14 @@ public class Logic implements ILogic {
     private int _startingSeeds = 4;
     private int _players = 2;
 
-    MovementStrategy player1Strat;// = new Player1Strategy(Board);
+    MovementStrategy _player1Strategy;
+    MovementStrategy _player2Strategy;
 
     public Logic(IO io) {
         _board = new Board(_players,_stalls,_startingSeeds);
         _io = io;
+        _player1Strategy = new Player1Strategy(_board.getTeams().get(0));
+        _player2Strategy = new Player2Strategy(_board.getTeams().get(1));
     }
 
     public void play(){
@@ -69,7 +73,14 @@ public class Logic implements ILogic {
             return;
         }
 
-        if (!team.moveAtMid(storeNum,seeds,_turn+1)){
+        boolean stay;
+        if (_turn==0){
+            stay = _board.doAction(_player1Strategy,storeNum,seeds,_turn+1);
+        } else {
+            stay = _board.doAction(_player2Strategy,storeNum,seeds,_turn+1);
+        }
+
+        if (!stay){
             _turn=(_turn+1)%_players;
         }
     }
