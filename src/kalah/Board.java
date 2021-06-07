@@ -26,4 +26,8 @@ public class Board {
     public boolean doAction(MovementStrategy strategy, int position,int seeds, int turn){
         return strategy.move(position,seeds,turn);
     }
+
+    public int checkLegability(MovementStrategy strategy, int position){
+        return strategy.getLegability(position);
+    }
 }

@@ -6,4 +6,6 @@ import kalah.Interface.ITeam;
 public interface MovementStrategy {
 
     public boolean move(int position,int seeds, int turn);
+
+    public int getLegability(int storeNum);
 }

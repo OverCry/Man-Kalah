@@ -63,20 +63,21 @@ public class Logic implements ILogic {
     }
 
     private void doAction(int storeNum) {
-        ITeam team = _board.getTeams().get(_turn);
-        // check if the number is a valid move
-        IStore oriStore = team.getStore(storeNum);
-        int seeds = oriStore.takeAll();
-        // check if empty
-        if (seeds == 0){
-            _io.println("House is empty. Move again.");
-            return;
-        }
 
         boolean stay;
         if (_turn==0){
+            int seeds = _board.checkLegability(_player1Strategy,storeNum);
+            if (seeds == 0){
+                _io.println("House is empty. Move again.");
+            return;
+            }
             stay = _board.doAction(_player1Strategy,storeNum,seeds,_turn+1);
         } else {
+            int seeds = _board.checkLegability(_player2Strategy,storeNum);
+            if (seeds == 0){
+                _io.println("House is empty. Move again.");
+            return;
+            }
             stay = _board.doAction(_player2Strategy,storeNum,seeds,_turn+1);
         }
 
