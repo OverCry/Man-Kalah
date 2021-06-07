@@ -9,9 +9,9 @@ Codebase	submissions/a3-modular-kalah-OverCry/a3-modular-kalah-OverCry
 
 ##Module Attributes
 #Entity	Ce	Ca	CON	DIF	DIM	DSF	DSM	DSFF	MIF	MIM	MSF	MSM	MAIN	CLS	INT	ENM	ANN	EXP	NST	EXT	IMP	MDUInh	MInhF	CeR	CaR
-kalah.Board	6	1	2	6	5	0	0	0	6	5	0	0	0	1	0	0	0	0	0	0	1	1	0	0.545	0.091
+kalah.Logic	6	1	2	6	5	0	0	0	6	5	0	0	0	1	0	0	0	0	0	0	1	1	0	0.545	0.091
 kalah.House	2	1	1	0	0	0	0	0	1	2	0	0	0	1	0	0	0	0	0	1	1	1	0	0.182	0.091
-kalah.Interface.IBoard	0	2	0	0	2	0	0	0	0	2	0	0	0	0	1	0	0	0	0	0	0	0	1	0.000	0.182
+kalah.Interface.ILogic	0	2	0	0	2	0	0	0	0	2	0	0	0	0	1	0	0	0	0	0	0	0	1	0.000	0.182
 kalah.Interface.IHouse	0	4	0	0	2	0	0	0	0	2	0	0	0	0	1	0	0	0	0	0	0	0	1	0.000	0.364
 kalah.Interface.IStore	0	5	0	0	4	0	0	0	0	4	0	0	0	0	1	0	0	0	0	0	0	0	1	0.000	0.455
 kalah.Interface.ITeam	2	3	0	0	8	0	0	0	0	8	0	0	0	0	1	0	0	0	0	0	0	0	1	0.182	0.273

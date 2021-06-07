@@ -17,9 +17,9 @@ LCOM2 (Cohesion)	UnboundedCount	(srcsttc) Record dependencies with respect to bo
 RFC (Coupling)	UnboundedCount	(trgtall) Record dependencies to target modules whether or not the declarations have been seen; (srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (trgtsttic) Record dependencies to both instance and static fields and methods in the target module; (trgtcons) Record both invoking methods and calling construtors as creating dependencies; (type) Record dependencies between all types, including interfaces, enums, an annotations
 #Data
 #Entity	CKCBO (Coupling)	WMC (Size)	NOC (Inheritance)	DIT (Inheritance)	LCOM2 (Cohesion)	RFC (Coupling)
-kalah.Board	6	7	0	1	0	45
+kalah.Logic	6	7	0	1	0	45
 kalah.House	2	1	0	2	0	2
-kalah.Interface.IBoard	1	2	1	0	0	2
+kalah.Interface.ILogic	1	2	1	0	0	2
 kalah.Interface.IHouse	2	2	1	0	0	2
 kalah.Interface.IStore	3	4	1	0	0	4
 kalah.Interface.ITeam	3	8	1	0	0	8

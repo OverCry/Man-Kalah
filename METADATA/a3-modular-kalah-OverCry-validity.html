@@ -431,8 +431,8 @@ Class
   </tr>
   <tr valign=top>
     <td><div class="scrollable">
-kalah.Board
-</div></td>
+        kalah.Logic
+    </div></td>
     <td><div class="scrollable">
 Class
 </div></td>
@@ -461,7 +461,7 @@ Class
 23
 </div></td>
     <td><div class="scrollable">
-[Implements:kalah.Board>kalah.Interface.IBoard, kalah.Board#private boolean ifOver() {}>kalah.Interface.ITeam#public abstract java.util.List getStores() <>:[5], kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}>kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}:[5], kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}>kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}:[5], Cast:kalah.Interface.ITeam:[4], Local:kalah.Interface.ITeam:[0], kalah.Board#private void setUp() {}>kalah.Interface.ITeam#public abstract int getTeamNumber() <>:[14], Local:kalah.Interface.ITeam:[1], kalah.Board#public void play() {}>kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}:[36], Local:kalah.Interface.IStore:[0], Local:kalah.Interface.IStore:[1], kalah.Board#public void play() {}>kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}:[5], kalah.Board#public void play() {}>kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}:[31], Cast:kalah.Interface.IStore:[9], kalah.Board#private void setUp() {}>kalah.Interface.ITeam#public abstract void addNext(kalah.Interface.ITeam) <>:[18], kalah.Board#public void play() {}>kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}:[24], kalah.Board#private void doAction(int) {}>kalah.Interface.IStore#public abstract int takeAll() <>:[6], kalah.Board#private void setUp() {}>kalah.Team#public <init>(int,int,int,int) {}:[6], kalah.Board#private kalah.Singleton.Printer _printer, kalah.Board#private boolean ifOver() {}>kalah.Interface.IStore#public abstract int getAmount() <>:[10], Cast:kalah.Interface.ITeam:[17], kalah.Board#private void doAction(int) {}>kalah.Interface.ITeam#public abstract boolean moveAtMid(java.lang.Integer,int,int) <>:[11], kalah.Board#private void doAction(int) {}>kalah.Interface.ITeam#public abstract kalah.Interface.IStore getStore(int) <>:[5]]
+[Implements:kalah.Logic>kalah.Interface.ILogic, kalah.Logic#private boolean ifOver() {}>kalah.Interface.ITeam#public abstract java.util.List getStores() <>:[5], kalah.Logic#public <init>(com.qualitascorpus.testsupport.IO) {}>kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}:[5], kalah.Logic#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}>kalah.Singleton.Printer#public static kalah.Singleton.Printer getInstance() {}:[5], Cast:kalah.Interface.ITeam:[4], Local:kalah.Interface.ITeam:[0], kalah.Logic#private void setUp() {}>kalah.Interface.ITeam#public abstract int getTeamNumber() <>:[14], Local:kalah.Interface.ITeam:[1], kalah.Logic#public void play() {}>kalah.Singleton.Printer#public void printResult(com.qualitascorpus.testsupport.IO,java.util.List) {}:[36], Local:kalah.Interface.IStore:[0], Local:kalah.Interface.IStore:[1], kalah.Logic#public void play() {}>kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}:[5], kalah.Logic#public void play() {}>kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}:[31], Cast:kalah.Interface.IStore:[9], kalah.Logic#private void setUp() {}>kalah.Interface.ITeam#public abstract void addNext(kalah.Interface.ITeam) <>:[18], kalah.Logic#public void play() {}>kalah.Singleton.Printer#public void printState(com.qualitascorpus.testsupport.IO,java.util.List,int) {}:[24], kalah.Logic#private void doAction(int) {}>kalah.Interface.IStore#public abstract int takeAll() <>:[6], kalah.Logic#private void setUp() {}>kalah.Team#public <init>(int,int,int,int) {}:[6], kalah.Board#private kalah.Singleton.Printer _printer, kalah.Board#private boolean ifOver() {}>kalah.Interface.IStore#public abstract int getAmount() <>:[10], Cast:kalah.Interface.ITeam:[17], kalah.Board#private void doAction(int) {}>kalah.Interface.ITeam#public abstract boolean moveAtMid(java.lang.Integer,int,int) <>:[11], kalah.Board#private void doAction(int) {}>kalah.Interface.ITeam#public abstract kalah.Interface.IStore getStore(int) <>:[5]]
 </div></td>
     <td><div class="scrollable">
 5
@@ -521,7 +521,7 @@ Class
 7
 </div></td>
     <td><div class="scrollable">
-[Return:kalah.Board#private boolean ifOver() {}, Return:kalah.Board#public void reset() {}, Return:kalah.Board#private void doAction(int) {}, kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.Board#private void setUp() {}, Return:kalah.Board#public void play() {}, kalah.Board#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}>java.lang.Object#public <init>() <>*:[1]]
+[Return:kalah.Logic#private boolean ifOver() {}, Return:kalah.Logic#public void reset() {}, Return:kalah.Logic#private void doAction(int) {}, kalah.Logic#public <init>(com.qualitascorpus.testsupport.IO) {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.Logic#private void setUp() {}, Return:kalah.Logic#public void play() {}, kalah.Logic#public <init>(com.qualitascorpus.testsupport.IO,int,int,int) {}>java.lang.Object#public <init>() <>*:[1]]
 </div></td>
     <td><div class="scrollable">
 7
@@ -633,8 +633,8 @@ Class
   </tr>
   <tr valign=top>
     <td><div class="scrollable">
-kalah.Interface.IBoard
-</div></td>
+        kalah.Interface.ILogic
+    </div></td>
     <td><div class="scrollable">
 Interface
 </div></td>
@@ -651,14 +651,14 @@ Interface
 2
 </div></td>
     <td><div class="scrollable">
-[kalah.Board, kalah.Kalah]
-</div></td>
+        [kalah.Logic, kalah.Kalah]
+    </div></td>
     <td><div class="scrollable">
 2
 </div></td>
     <td><div class="scrollable">
-[kalah.Board, kalah.Kalah]
-</div></td>
+        [kalah.Logic, kalah.Kalah]
+    </div></td>
     <td><div class="scrollable">
 0
 </div></td>
@@ -1049,8 +1049,8 @@ Class
 2
 </div></td>
     <td><div class="scrollable">
-[kalah.Board, kalah.Interface.IBoard]
-</div></td>
+        [kalah.Logic, kalah.Interface.IBoard]
+    </div></td>
     <td><div class="scrollable">
 0
 </div></td>
@@ -1061,31 +1061,31 @@ Class
 2
 </div></td>
     <td><div class="scrollable">
-[kalah.Board, kalah.Interface.IBoard]
-</div></td>
+        [kalah.Logic, kalah.Interface.IBoard]
+    </div></td>
     <td><div class="scrollable">
 3
 </div></td>
     <td><div class="scrollable">
-[kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}>kalah.Interface.IBoard#public abstract void play() <>:[2], Local:kalah.Interface.IBoard:[0], kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}>kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}:[1]]
+[kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}>kalah.Interface.ILogic#public abstract void play() <>:[2], Local:kalah.Interface.ILogic:[0], kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}>kalah.Logic#public <init>(com.qualitascorpus.testsupport.IO) {}:[1]]
 </div></td>
     <td><div class="scrollable">
 2
 </div></td>
     <td><div class="scrollable">
-[kalah.Board, kalah.Interface.IBoard]
-</div></td>
+        [kalah.Logic, kalah.Interface.IBoard]
+    </div></td>
     <td><div class="scrollable">
 2
 </div></td>
     <td><div class="scrollable">
-[kalah.Board, kalah.Interface.IBoard]
-</div></td>
+        [kalah.Logic, kalah.Interface.IBoard]
+    </div></td>
     <td><div class="scrollable">
 3
 </div></td>
     <td><div class="scrollable">
-[play(com.qualitascorpus.testsupport.IO)>kalah.Board#public <init>(com.qualitascorpus.testsupport.IO) {}, play(com.qualitascorpus.testsupport.IO)>kalah.Board#public void play() {}, play(com.qualitascorpus.testsupport.IO)>kalah.Interface.IBoard#public abstract void play() <>]
+[play(com.qualitascorpus.testsupport.IO)>kalah.Logic#public <init>(com.qualitascorpus.testsupport.IO) {}, play(com.qualitascorpus.testsupport.IO)>kalah.Board#public void play() {}, play(com.qualitascorpus.testsupport.IO)>kalah.Interface.IBoard#public abstract void play() <>]
 </div></td>
     <td><div class="scrollable">
 2

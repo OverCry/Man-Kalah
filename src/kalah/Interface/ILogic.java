@@ -1,13 +1,9 @@
 package kalah.Interface;
 
-public interface IBoard {
+public interface ILogic {
     /**
      * start playing Kalah
      */
     void play();
 
-    /**
-     * restart the game
-     */
-    void reset();
 }

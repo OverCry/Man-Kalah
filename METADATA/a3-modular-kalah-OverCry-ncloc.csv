@@ -12,9 +12,9 @@ Codebase	./submissions/a3-modular-kalah-OverCry/src
 NCLOC	UnboundedCount	Non-comment non-blank lines of code for module (first line with simple name to line with closing brace)
 #Data
 #Entity	NCLOC
-kalah.Board	73
+kalah.Logic	73
 kalah.House	5
-kalah.Interface.IBoard	4
+kalah.Interface.ILogic	4
 kalah.Interface.IHouse	4
 kalah.Interface.IStore	6
 kalah.Interface.ITeam	10
