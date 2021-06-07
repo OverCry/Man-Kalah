@@ -20,6 +20,7 @@ public class Logic implements ILogic {
     private IO _io;
     private Printer _printer = Printer.getInstance();
     private Board _board;
+    private MovementStrategy currentStrategy;
 
     /**
      * Field variables for modularity
@@ -35,8 +36,10 @@ public class Logic implements ILogic {
     public Logic(IO io) {
         _board = new Board(_players,_stalls,_startingSeeds);
         _io = io;
+        // set up strategy
         _player1Strategy = new Player1Strategy(_board.getTeams().get(0));
         _player2Strategy = new Player2Strategy(_board.getTeams().get(1));
+        currentStrategy=_player1Strategy;
     }
 
     public void play(){
@@ -64,25 +67,16 @@ public class Logic implements ILogic {
 
     private void doAction(int storeNum) {
 
-        boolean stay;
-        if (_turn==0){
-            int seeds = _board.checkLegability(_player1Strategy,storeNum);
-            if (seeds == 0){
-                _io.println("House is empty. Move again.");
+        int seeds = _board.checkLegability(currentStrategy,storeNum);
+        if (seeds == 0){
+            _io.println("House is empty. Move again.");
             return;
-            }
-            stay = _board.doAction(_player1Strategy,storeNum,seeds,_turn+1);
-        } else {
-            int seeds = _board.checkLegability(_player2Strategy,storeNum);
-            if (seeds == 0){
-                _io.println("House is empty. Move again.");
-            return;
-            }
-            stay = _board.doAction(_player2Strategy,storeNum,seeds,_turn+1);
         }
+        boolean stay = _board.doAction(currentStrategy,storeNum,seeds,_turn+1);
 
         if (!stay){
             _turn=(_turn+1)%_players;
+            currentStrategy=(_turn==0 ? _player1Strategy: _player2Strategy);
         }
     }
 

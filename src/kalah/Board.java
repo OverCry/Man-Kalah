@@ -28,6 +28,6 @@ public class Board {
     }
 
     public int checkLegability(MovementStrategy strategy, int position){
-        return strategy.getLegability(position);
+        return strategy.getLegibility(position);
     }
 }

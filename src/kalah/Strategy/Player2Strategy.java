@@ -6,12 +6,7 @@ import kalah.Interface.ITeam;
 
 public class Player2Strategy implements MovementStrategy{
 
-    private Board _board;
     private ITeam _team;
-
-    public Player2Strategy(Board board){
-        _board=board;
-    }
 
     public Player2Strategy(ITeam team){
         _team=team;
@@ -23,7 +18,7 @@ public class Player2Strategy implements MovementStrategy{
     }
 
     @Override
-    public int getLegability(int storeNum) {
+    public int getLegibility(int storeNum) {
         IStore oriStore = _team.getStore(storeNum);
         int seeds = oriStore.takeAll();
         return seeds;
